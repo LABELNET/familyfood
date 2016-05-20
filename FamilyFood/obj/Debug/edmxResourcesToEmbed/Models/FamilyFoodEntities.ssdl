@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="family_foodModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="family_foodModelStoreContainer">
+    <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" store:Schema="dbo" store:Name="card">
+      <DefiningQuery>SELECT 
+      [card].[id] AS [id], 
+      [card].[description] AS [description], 
+      [card].[message] AS [message], 
+      [card].[summary] AS [summary]
+      FROM [dbo].[card] AS [card]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" store:Schema="dbo" store:Name="cate">
+      <DefiningQuery>SELECT 
+      [cate].[id] AS [id], 
+      [cate].[catecontent] AS [catecontent], 
+      [cate].[uid] AS [uid]
+      FROM [dbo].[cate] AS [cate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" store:Schema="dbo" store:Name="dapei">
+      <DefiningQuery>SELECT 
+      [dapei].[id] AS [id], 
+      [dapei].[dp] AS [dp], 
+      [dapei].[uid] AS [uid]
+      FROM [dbo].[dapei] AS [dapei]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" store:Schema="dbo" store:Name="food">
+      <DefiningQuery>SELECT 
+      [food].[id] AS [id], 
+      [food].[name] AS [name], 
+      [food].[kg] AS [kg], 
+      [food].[dt] AS [dt], 
+      [food].[uid] AS [uid], 
+      [food].[cid] AS [cid], 
+      [food].[caid] AS [caid], 
+      [food].[status] AS [status]
+      FROM [dbo].[food] AS [food]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="user_table" EntityType="family_foodModel.Store.user_table" store:Type="Tables" store:Schema="dbo" store:Name="user_table">
+      <DefiningQuery>SELECT 
+      [user_table].[id] AS [id], 
+      [user_table].[nick] AS [nick], 
+      [user_table].[phone] AS [phone], 
+      [user_table].[pass] AS [pass], 
+      [user_table].[sex] AS [sex], 
+      [user_table].[heath] AS [heath]
+      FROM [dbo].[user_table] AS [user_table]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“family_food.dbo.card”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="card">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="text" />
+    <Property Name="message" Type="text" />
+    <Property Name="summary" Type="text" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“family_food.dbo.cate”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="cate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="catecontent" Type="varchar" MaxLength="50" />
+    <Property Name="uid" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“family_food.dbo.dapei”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="dapei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="dp" Type="text" />
+    <Property Name="uid" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“family_food.dbo.food”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="food">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="kg" Type="float" />
+    <Property Name="dt" Type="varchar" MaxLength="50" />
+    <Property Name="uid" Type="int" />
+    <Property Name="cid" Type="int" />
+    <Property Name="caid" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“family_food.dbo.user_table”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="user_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nick" Type="varchar" MaxLength="100" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar" MaxLength="50" />
+    <Property Name="sex" Type="int" />
+    <Property Name="heath" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

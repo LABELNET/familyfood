@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="family_foodModelStoreContainer" CdmEntityContainer="FamilyFoodEntities">
+    <EntitySetMapping Name="card">
+      <EntityTypeMapping TypeName="family_foodModel.card">
+        <MappingFragment StoreEntitySet="card">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cate">
+      <EntityTypeMapping TypeName="family_foodModel.cate">
+        <MappingFragment StoreEntitySet="cate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="catecontent" ColumnName="catecontent" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dapei">
+      <EntityTypeMapping TypeName="family_foodModel.dapei">
+        <MappingFragment StoreEntitySet="dapei">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dp" ColumnName="dp" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="food">
+      <EntityTypeMapping TypeName="family_foodModel.food">
+        <MappingFragment StoreEntitySet="food">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="kg" ColumnName="kg" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="caid" ColumnName="caid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_table">
+      <EntityTypeMapping TypeName="family_foodModel.user_table">
+        <MappingFragment StoreEntitySet="user_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nick" ColumnName="nick" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="heath" ColumnName="heath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

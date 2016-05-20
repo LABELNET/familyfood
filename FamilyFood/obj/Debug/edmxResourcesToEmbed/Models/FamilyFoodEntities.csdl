@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="family_foodModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FamilyFoodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="card" EntityType="family_foodModel.card" />
+    <EntitySet Name="cate" EntityType="family_foodModel.cate" />
+    <EntitySet Name="dapei" EntityType="family_foodModel.dapei" />
+    <EntitySet Name="food" EntityType="family_foodModel.food" />
+    <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
+  </EntityContainer>
+  <EntityType Name="card">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="message" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="cate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catecontent" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dapei">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="dp" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="food">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="kg" Type="Double" />
+    <Property Name="dt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="cid" Type="Int32" />
+    <Property Name="caid" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="user_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nick" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sex" Type="Int32" />
+    <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>
