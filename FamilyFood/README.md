@@ -12,6 +12,7 @@
 	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效);
 	  cate : 食物分类    :id,content(分类内容),uid;
 	  dapei: 食物搭配    :id,dp(搭配内容),uid;
+	  ucard : 用户资料卡 ：id,taste(最喜欢的口味)，fruit(最喜欢的水果)，vegetables(最喜欢的蔬菜),dishes(最喜欢的菜品)，uid（用户id）
 
 	```
  * 系统架构： asp.net mvc 2.0 ; 

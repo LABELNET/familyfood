@@ -6,6 +6,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-   <h2>我是主页</h2>
+   <h2>我是主页测试</h2>
 
 </asp:Content>
