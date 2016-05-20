@@ -4,7 +4,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>家庭食物小站</title>
+        <title>家庭食物管理小站</title>
 		<meta name="keywords" content="家庭食物小站" />
 		<meta name="description" content="家庭食物小站" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
