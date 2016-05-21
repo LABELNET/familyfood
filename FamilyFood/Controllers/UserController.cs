@@ -65,7 +65,7 @@ namespace FamilyFood.Controllers
            }
         }
 
-
+        
         /// <summary>
         /// 用户注册请求
         /// </summary>
@@ -90,6 +90,11 @@ namespace FamilyFood.Controllers
                 return Redirect("/user/register");
             }
 
+        }
+
+        public ActionResult Layout() {
+            Session.Abandon();
+            return Redirect("/user/login");
         }
         
         
