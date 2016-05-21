@@ -92,6 +92,10 @@ namespace FamilyFood.Controllers
 
         }
 
+        /// <summary>
+        /// 登出
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Layout() {
             Session.Abandon();
             return Redirect("/user/login");
