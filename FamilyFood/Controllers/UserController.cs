@@ -18,6 +18,9 @@ namespace FamilyFood.Controllers
 
         public ActionResult Index()
         {
+
+            
+
             return View();
         }
 

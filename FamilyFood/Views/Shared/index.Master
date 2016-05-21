@@ -167,8 +167,7 @@
 								</span>
 							</a>
 							<ul class="dropdown-menu animation-dock">
-								<li class="dropdown-header">关于</li>
-								<li><a href="#">资料卡</a></li>
+								<li class="dropdown-header">家庭食物管理小站欢迎你</li>
 								<li><a href="#">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
                                 <li><a href="#">关于本站</a></li>
 								<li class="divider"></li>
