@@ -169,6 +169,7 @@
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">家庭食物管理小站欢迎你</li>
 								<li><a href="#">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
+                                <li><a href="#">家庭主页</a></li>
                                 <li><a href="#">关于本站</a></li>
 								<li class="divider"></li>
 								<li><a href="/user/Layout"><i class="fa fa-fw fa-power-off text-danger"></i> 安全退出</a></li>
@@ -277,23 +278,7 @@
 
 					
 
-						<!-- BEGIN FORMS -->
-						<li class="gui-folder">
-							<a>
-								<div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
-								<span class="title">我最喜爱的</span>
-							</a>
-						
-                        
-                             <ul>
-								    <li><a href="#" ><span class="title">编辑最喜欢</span></a></li>
-								    <li><a href="#" ><span class="title">添加最喜欢</span></a></li>
-							 </ul><!--end /submenu -->
-
-						</li><!--end /menu-li -->
-						<!-- END FORMS -->
-
-						<!-- BEGIN PAGES -->
+                      <!-- BEGIN PAGES -->
 						<li class="gui-folder">
 							<a>
 								<div class="gui-icon"><i class="md md-computer"></i></div>
@@ -306,7 +291,8 @@
 						</li><!--end /menu-li -->
 						<!-- END FORMS -->
 
-						<!-- BEGIN CHARTS -->
+
+                        <!-- BEGIN CHARTS -->
 						<li>
 							<a href="#" >
 								<div class="gui-icon"><i class="md md-assessment"></i></div>
@@ -314,6 +300,24 @@
 							</a>
 						</li><!--end /menu-li -->
 						<!-- END CHARTS -->
+
+						<!-- BEGIN FORMS -->
+						<li class="gui-folder">
+							<a>
+								<div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+								<span class="title">家庭管理</span>
+							</a>
+						
+                        
+                             <ul>
+								    <li><a href="#" ><span class="title">成员管理</span></a></li>
+								    <li><a href="#" ><span class="title">主页管理</span></a></li>
+							 </ul><!--end /submenu -->
+
+						</li><!--end /menu-li -->
+						<!-- END FORMS -->
+
+						
 
                         	<!-- BEGIN EMAIL -->
 						<li class="gui-folder">

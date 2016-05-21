@@ -1,6 +1,10 @@
 ﻿# 家庭食物管理小站
 
 
+# 2016.05.22
+ * 创建家庭、加入家庭
+ * 个人中心：包括用户资料，用户卡片（最喜欢的）
+
 # 2016.05.21
  * 用户登录    ： 手机，密码(ok)
  * 注册        ： 手机，密码，昵称(ok)
@@ -30,12 +34,14 @@
  * 新建数据库 family_food ; 登陆名 ： sa ,密码 ：tong
  * 数据库设计
 	```
-	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）,heath（健康）;
+	  family :家庭  ： id, name(家庭名称),num(家庭人数)，description(家庭描述)
+	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）,heath（健康）,fid(家庭id);
 	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),cid（资料卡id）,caid(分类)，status(状态)；
 	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效);
 	  cate : 食物分类    :id,content(分类内容),uid;
 	  dapei: 食物搭配    :id,dp(搭配内容),uid;
 	  ucard : 用户资料卡 ：id,taste(最喜欢的口味)，fruit(最喜欢的水果)，vegetables(最喜欢的蔬菜),dishes(最喜欢的菜品)，uid（用户id）
+	  comment:留言、备忘 ： id,content,uid(用户id),fid(家庭id)
 
 	```
  * 系统架构： asp.net mvc 2.0 ; sqlserver 2005 ;
