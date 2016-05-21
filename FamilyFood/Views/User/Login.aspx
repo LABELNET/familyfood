@@ -27,6 +27,34 @@
         </style>
 
         <script type="text/javascript">
+
+            function check() {
+                var phone = $("#phone").val();
+                return validatemobile(phone);
+            }
+
+            function validatemobile(mobile) {
+                if (mobile.length == 0) {
+                    alert('请输入手机号码！');
+                    document.form1.mobile.focus();
+                    return false;
+                }
+                if (mobile.length != 11) {
+                    alert('请输入有效的手机号码！');
+                    document.form1.mobile.focus();
+                    return false;
+                }
+
+                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                if (!myreg.test(mobile)) {
+                    alert('请输入有效的手机号码！');
+                    document.form1.mobile.focus();
+                    return false;
+                }
+
+                return true;
+            } 
+
         </script>
 
     </head>
@@ -35,8 +63,8 @@
 
         <div class="page-container">
             <h1>登录</h1>
-            <form action="" method="post">
-                <input type="text" name="name"  class="username" placeholder="手机号码">
+            <form action="" method="post" onsubmit="return check();">
+                <input type="text" name="name" id="phone"  class="username" placeholder="手机号码">
                 <input type="password" name="pass" class="password" placeholder="密码">
                 <button type="submit">提交</button>
                  <a id="register" href="/user/register">没有账户？注册</a>
