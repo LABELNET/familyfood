@@ -1828,7 +1828,7 @@ body:not(.menubar-first) .menubar-fixed-panel {
   font-weight: 500;
 }
 .gui-controls li.gui-folder > a .title {
-  font-style: italic;
+  font-style:normal;
   color: rgba(12, 12, 12, 0.75);
 }
 .gui-controls li.gui-folder.expanded > a .title,
