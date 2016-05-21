@@ -170,6 +170,7 @@
 								<li class="dropdown-header">关于</li>
 								<li><a href="#">资料卡</a></li>
 								<li><a href="#">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
+                                <li><a href="#">关于本站</a></li>
 								<li class="divider"></li>
 								<li><a href="/user/Layout"><i class="fa fa-fw fa-power-off text-danger"></i> 安全退出</a></li>
 							</ul><!--end .dropdown-menu -->
@@ -194,11 +195,9 @@
 			<div class="offcanvas">
 			</div><!--end .offcanvas-->
 			<!-- END OFFCANVAS LEFT -->
-
-		    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
-            </asp:ContentPlaceHolder>
-			<!-- END CONTENT -->
+         
+          <asp:ContentPlaceHolder ID="MainContent" runat="server">
+          </asp:ContentPlaceHolder>
 
 			<!-- BEGIN MENUBAR-->
 			<div id="menubar" class="menubar-inverse ">
