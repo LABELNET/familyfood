@@ -6,64 +6,13 @@
     <edmx:StorageModels>
     <Schema Namespace="family_foodModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="family_foodModelStoreContainer">
-          <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" store:Schema="dbo" store:Name="card">
-            <DefiningQuery>SELECT 
-      [card].[id] AS [id], 
-      [card].[description] AS [description], 
-      [card].[message] AS [message], 
-      [card].[summary] AS [summary]
-      FROM [dbo].[card] AS [card]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" store:Schema="dbo" store:Name="cate">
-            <DefiningQuery>SELECT 
-      [cate].[id] AS [id], 
-      [cate].[catecontent] AS [catecontent], 
-      [cate].[uid] AS [uid]
-      FROM [dbo].[cate] AS [cate]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" store:Schema="dbo" store:Name="dapei">
-            <DefiningQuery>SELECT 
-      [dapei].[id] AS [id], 
-      [dapei].[dp] AS [dp], 
-      [dapei].[uid] AS [uid]
-      FROM [dbo].[dapei] AS [dapei]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" store:Schema="dbo" store:Name="food">
-            <DefiningQuery>SELECT 
-      [food].[id] AS [id], 
-      [food].[name] AS [name], 
-      [food].[kg] AS [kg], 
-      [food].[dt] AS [dt], 
-      [food].[uid] AS [uid], 
-      [food].[cid] AS [cid], 
-      [food].[caid] AS [caid], 
-      [food].[status] AS [status]
-      FROM [dbo].[food] AS [food]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ucard" EntityType="family_foodModel.Store.ucard" store:Type="Tables" store:Schema="dbo" store:Name="ucard">
-            <DefiningQuery>SELECT 
-      [ucard].[id] AS [id], 
-      [ucard].[taste] AS [taste], 
-      [ucard].[fruit] AS [fruit], 
-      [ucard].[vegetables] AS [vegetables], 
-      [ucard].[dishes] AS [dishes], 
-      [ucard].[uid] AS [uid]
-      FROM [dbo].[ucard] AS [ucard]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="user_table" EntityType="family_foodModel.Store.user_table" store:Type="Tables" store:Schema="dbo" store:Name="user_table">
-            <DefiningQuery>SELECT 
-      [user_table].[id] AS [id], 
-      [user_table].[nick] AS [nick], 
-      [user_table].[phone] AS [phone], 
-      [user_table].[pass] AS [pass], 
-      [user_table].[sex] AS [sex], 
-      [user_table].[heath] AS [heath]
-      FROM [dbo].[user_table] AS [user_table]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ucard" EntityType="family_foodModel.Store.ucard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_table" EntityType="family_foodModel.Store.user_table" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.card”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="card">
           <Key>
             <PropertyRef Name="id" />
@@ -73,9 +22,6 @@
           <Property Name="message" Type="text" />
           <Property Name="summary" Type="text" />
         </EntityType>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.cate”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="cate">
           <Key>
             <PropertyRef Name="id" />
@@ -84,9 +30,6 @@
           <Property Name="catecontent" Type="varchar" MaxLength="50" />
           <Property Name="uid" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.dapei”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="dapei">
           <Key>
             <PropertyRef Name="id" />
@@ -95,9 +38,6 @@
           <Property Name="dp" Type="text" />
           <Property Name="uid" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.food”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="food">
           <Key>
             <PropertyRef Name="id" />
@@ -111,9 +51,6 @@
           <Property Name="caid" Type="int" />
           <Property Name="status" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.ucard”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="ucard">
           <Key>
             <PropertyRef Name="id" />
@@ -125,9 +62,6 @@
           <Property Name="dishes" Type="varchar" MaxLength="50" />
           <Property Name="uid" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-      警告 6002: 表/视图“family_food.dbo.user_table”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
         <EntityType Name="user_table">
           <Key>
             <PropertyRef Name="id" />
@@ -148,8 +82,8 @@
           <EntitySet Name="cate" EntityType="family_foodModel.cate" />
           <EntitySet Name="dapei" EntityType="family_foodModel.dapei" />
           <EntitySet Name="food" EntityType="family_foodModel.food" />
-          <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
           <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
+          <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
         </EntityContainer>
         <EntityType Name="card">
           <Key>
@@ -189,6 +123,17 @@
           <Property Name="caid" Type="Int32" />
           <Property Name="status" Type="Int32" />
         </EntityType>
+        <EntityType Name="ucard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taste" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fruit" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vegetables" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dishes" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="uid" Type="Int32" />
+        </EntityType>
         <EntityType Name="user_table">
           <Key>
             <PropertyRef Name="id" />
@@ -199,17 +144,6 @@
           <Property Name="pass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="sex" Type="Int32" />
           <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="ucard">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="taste" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="fruit" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="vegetables" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="dishes" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="uid" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -259,6 +193,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ucard">
+            <EntityTypeMapping TypeName="family_foodModel.ucard">
+              <MappingFragment StoreEntitySet="ucard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="taste" ColumnName="taste" />
+                <ScalarProperty Name="fruit" ColumnName="fruit" />
+                <ScalarProperty Name="vegetables" ColumnName="vegetables" />
+                <ScalarProperty Name="dishes" ColumnName="dishes" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="user_table">
             <EntityTypeMapping TypeName="family_foodModel.user_table">
               <MappingFragment StoreEntitySet="user_table">
@@ -268,18 +214,6 @@
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="sex" ColumnName="sex" />
                 <ScalarProperty Name="heath" ColumnName="heath" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ucard">
-            <EntityTypeMapping TypeName="family_foodModel.ucard">
-              <MappingFragment StoreEntitySet="ucard">
-                <ScalarProperty Name="uid" ColumnName="uid" />
-                <ScalarProperty Name="dishes" ColumnName="dishes" />
-                <ScalarProperty Name="vegetables" ColumnName="vegetables" />
-                <ScalarProperty Name="fruit" ColumnName="fruit" />
-                <ScalarProperty Name="taste" ColumnName="taste" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -308,8 +242,8 @@
         <EntityTypeShape EntityType="family_foodModel.cate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.75" PointY="3.75" Height="2.5430916341145835" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="5.375" PointY="3.75" Height="2.1610522460937496" />
+        <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="4.75" PointY="3.75" Height="2.1610522460937496" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>

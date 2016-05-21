@@ -48,13 +48,20 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult LoginRequest(String phone, String pass) { 
            user_table user= db.user_table.SingleOrDefault<user_table>(u=>u.phone==phone && u.pass==pass);
-           if (user.id > 0)
+           if (user != null)
            {
-               Session["user"] = user;
-               return Redirect("home/index");
+               if (user.id > 0)
+               {
+                   Session["user"] = user;
+                   return Redirect("../home/index");
+               }
+               else
+               {
+                   return Redirect("/user/register");
+               }
            }
            else {
-               return Redirect("user/register");
+               return Redirect("/user/register");
            }
         }
 
@@ -73,14 +80,14 @@ namespace FamilyFood.Controllers
             user.phone = phone;
             user.pass = pass;
             db.user_table.AddObject(user);
-            int result=db.SaveChanges();
+            int result= db.SaveChanges();
             if (result > 0)
             {
-                return Redirect("home/login");
+                return Redirect("/user/login");
             }
             else
             {
-                return Redirect("user/register");
+                return Redirect("/user/register");
             }
 
         }

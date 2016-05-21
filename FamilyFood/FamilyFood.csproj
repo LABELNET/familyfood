@@ -1595,12 +1595,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\FamilyFoodEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FamilyFoodEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\index.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -1879,6 +1873,10 @@
     <None Include="assets\less\shared\themes\theme-5.less" />
     <None Include="assets\less\shared\themes\theme-default.less" />
     <None Include="assets\less\shared\variables.less" />
+    <EntityDeploy Include="Models\FamilyFoodEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FamilyFoodEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

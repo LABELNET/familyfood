@@ -43,6 +43,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ucard">
+      <EntityTypeMapping TypeName="family_foodModel.ucard">
+        <MappingFragment StoreEntitySet="ucard">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="taste" ColumnName="taste" />
+          <ScalarProperty Name="fruit" ColumnName="fruit" />
+          <ScalarProperty Name="vegetables" ColumnName="vegetables" />
+          <ScalarProperty Name="dishes" ColumnName="dishes" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="user_table">
       <EntityTypeMapping TypeName="family_foodModel.user_table">
         <MappingFragment StoreEntitySet="user_table">

@@ -80,7 +80,7 @@
         <div class="page-container">
             <h1>注册</h1>
             <form action="/user/RegisterRequest" method="post" onsubmit="return check();">
-                <input type="text" name="name" id="phone" class="username" placeholder="手机号码">
+                <input type="text" name="phone" id="phone" class="username" placeholder="手机号码">
                 <input type="password" name="pass" id="pass" class="password" placeholder="密码">
                 <input type="password" id="pass1" class="password" placeholder="确认密码">
                 <input type="text" name="nick" id="nick" class="username" placeholder="昵称">

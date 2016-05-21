@@ -5,6 +5,7 @@
     <EntitySet Name="cate" EntityType="family_foodModel.cate" />
     <EntitySet Name="dapei" EntityType="family_foodModel.dapei" />
     <EntitySet Name="food" EntityType="family_foodModel.food" />
+    <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
     <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
   </EntityContainer>
   <EntityType Name="card">
@@ -44,6 +45,17 @@
     <Property Name="cid" Type="Int32" />
     <Property Name="caid" Type="Int32" />
     <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ucard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="taste" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fruit" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="vegetables" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="dishes" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
   </EntityType>
   <EntityType Name="user_table">
     <Key>

@@ -64,7 +64,7 @@
         <div class="page-container">
             <h1>登录</h1>
             <form action="/user/LoginRequest" method="post" onsubmit="return check();">
-                <input type="text" name="name" id="phone"  class="username" placeholder="手机号码">
+                <input type="text" name="phone" id="phone"  class="username" placeholder="手机号码">
                 <input type="password" name="pass" class="password" placeholder="密码">
                 <button type="submit">提交</button>
                  <a id="register" href="/user/register">没有账户？注册</a>

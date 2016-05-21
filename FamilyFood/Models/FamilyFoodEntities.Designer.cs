@@ -132,22 +132,6 @@ namespace FamilyFood.Models
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<user_table> user_table
-        {
-            get
-            {
-                if ((_user_table == null))
-                {
-                    _user_table = base.CreateObjectSet<user_table>("user_table");
-                }
-                return _user_table;
-            }
-        }
-        private ObjectSet<user_table> _user_table;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<ucard> ucard
         {
             get
@@ -160,6 +144,22 @@ namespace FamilyFood.Models
             }
         }
         private ObjectSet<ucard> _ucard;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<user_table> user_table
+        {
+            get
+            {
+                if ((_user_table == null))
+                {
+                    _user_table = base.CreateObjectSet<user_table>("user_table");
+                }
+                return _user_table;
+            }
+        }
+        private ObjectSet<user_table> _user_table;
 
         #endregion
 
@@ -198,19 +198,19 @@ namespace FamilyFood.Models
         }
     
         /// <summary>
-        /// 用于向 user_table EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddTouser_table(user_table user_table)
-        {
-            base.AddObject("user_table", user_table);
-        }
-    
-        /// <summary>
         /// 用于向 ucard EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddToucard(ucard ucard)
         {
             base.AddObject("ucard", ucard);
+        }
+    
+        /// <summary>
+        /// 用于向 user_table EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTouser_table(user_table user_table)
+        {
+            base.AddObject("user_table", user_table);
         }
 
         #endregion
