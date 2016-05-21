@@ -57,6 +57,34 @@ namespace FamilyFood.Controllers
                return Redirect("user/register");
            }
         }
+
+
+        /// <summary>
+        /// 用户注册请求
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <param name="pass"></param>
+        /// <param name="nick"></param>
+        /// <returns></returns>
+        public ActionResult RegisterRequest(String phone, String pass,String nick)
+        {
+            user_table user = new user_table();
+            user.nick = nick;
+            user.phone = phone;
+            user.pass = pass;
+            db.user_table.AddObject(user);
+            int result=db.SaveChanges();
+            if (result > 0)
+            {
+                return Redirect("home/login");
+            }
+            else
+            {
+                return Redirect("user/register");
+            }
+
+        }
+        
         
 
 
