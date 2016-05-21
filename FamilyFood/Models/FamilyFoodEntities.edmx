@@ -8,7 +8,9 @@
         <EntityContainer Name="family_foodModelStoreContainer">
           <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="comment" EntityType="family_foodModel.Store.comment" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="family" EntityType="family_foodModel.Store.family" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ucard" EntityType="family_foodModel.Store.ucard" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="user_table" EntityType="family_foodModel.Store.user_table" store:Type="Tables" Schema="dbo" />
@@ -30,6 +32,15 @@
           <Property Name="catecontent" Type="varchar" MaxLength="50" />
           <Property Name="uid" Type="int" />
         </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="comment" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="fid" Type="int" />
+        </EntityType>
         <EntityType Name="dapei">
           <Key>
             <PropertyRef Name="id" />
@@ -37,6 +48,15 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="dp" Type="text" />
           <Property Name="uid" Type="int" />
+        </EntityType>
+        <EntityType Name="family">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signature" Type="text" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="text" />
         </EntityType>
         <EntityType Name="food">
           <Key>
@@ -72,6 +92,7 @@
           <Property Name="pass" Type="varchar" MaxLength="50" />
           <Property Name="sex" Type="int" />
           <Property Name="heath" Type="varchar" MaxLength="50" />
+          <Property Name="fid" Type="int" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -84,6 +105,8 @@
           <EntitySet Name="food" EntityType="family_foodModel.food" />
           <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
           <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
+          <EntitySet Name="comment" EntityType="family_foodModel.comment" />
+          <EntitySet Name="family" EntityType="family_foodModel.family" />
         </EntityContainer>
         <EntityType Name="card">
           <Key>
@@ -144,6 +167,25 @@
           <Property Name="pass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="sex" Type="Int32" />
           <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="fid" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="comment1" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="uid" />
+          <Property Type="Int32" Name="fid" />
+        </EntityType>
+        <EntityType Name="family">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="signature" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -208,12 +250,33 @@
           <EntitySetMapping Name="user_table">
             <EntityTypeMapping TypeName="family_foodModel.user_table">
               <MappingFragment StoreEntitySet="user_table">
+                <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nick" ColumnName="nick" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="sex" ColumnName="sex" />
                 <ScalarProperty Name="heath" ColumnName="heath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comment">
+            <EntityTypeMapping TypeName="family_foodModel.comment">
+              <MappingFragment StoreEntitySet="comment">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="comment1" ColumnName="comment" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="family">
+            <EntityTypeMapping TypeName="family_foodModel.family">
+              <MappingFragment StoreEntitySet="family">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="signature" ColumnName="signature" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -240,10 +303,12 @@
       <Diagram Name="FamilyFoodEntities">
         <EntityTypeShape EntityType="family_foodModel.card" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.cate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.75" PointY="3.75" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.875" PointY="3" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.625" PointY="3" Height="2.5430916341145835" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="4.75" PointY="3.75" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="7.125" PointY="3.75" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.comment" Width="1.5" PointX="15.125" PointY="0.5" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="family_foodModel.family" Width="1.5" PointX="4.625" PointY="3.75" Height="1.7790128580729174" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -34,7 +34,7 @@
  * 新建数据库 family_food ; 登陆名 ： sa ,密码 ：tong
  * 数据库设计
 	```
-	  family :家庭  ： id, name(家庭名称),num(家庭人数)，description(家庭描述)
+	  family :家庭  ： id, name(家庭名称)，description(家庭描述),signature（家庭签名）
 	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）,heath（健康）,fid(家庭id);
 	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),cid（资料卡id）,caid(分类)，status(状态)；
 	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效);

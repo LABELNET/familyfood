@@ -160,6 +160,38 @@ namespace FamilyFood.Models
             }
         }
         private ObjectSet<user_table> _user_table;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<comment> comment
+        {
+            get
+            {
+                if ((_comment == null))
+                {
+                    _comment = base.CreateObjectSet<comment>("comment");
+                }
+                return _comment;
+            }
+        }
+        private ObjectSet<comment> _comment;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<family> family
+        {
+            get
+            {
+                if ((_family == null))
+                {
+                    _family = base.CreateObjectSet<family>("family");
+                }
+                return _family;
+            }
+        }
+        private ObjectSet<family> _family;
 
         #endregion
 
@@ -211,6 +243,22 @@ namespace FamilyFood.Models
         public void AddTouser_table(user_table user_table)
         {
             base.AddObject("user_table", user_table);
+        }
+    
+        /// <summary>
+        /// 用于向 comment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTocomment(comment comment)
+        {
+            base.AddObject("comment", comment);
+        }
+    
+        /// <summary>
+        /// 用于向 family EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTofamily(family family)
+        {
+            base.AddObject("family", family);
         }
 
         #endregion
@@ -458,6 +506,135 @@ namespace FamilyFood.Models
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="family_foodModel", Name="comment")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class comment : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 comment 对象。
+        /// </summary>
+        /// <param name="id">id 属性的初始值。</param>
+        public static comment Createcomment(global::System.Int32 id)
+        {
+            comment comment = new comment();
+            comment.id = id;
+            return comment;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String comment1
+        {
+            get
+            {
+                return _comment1;
+            }
+            set
+            {
+                Oncomment1Changing(value);
+                ReportPropertyChanging("comment1");
+                _comment1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("comment1");
+                Oncomment1Changed();
+            }
+        }
+        private global::System.String _comment1;
+        partial void Oncomment1Changing(global::System.String value);
+        partial void Oncomment1Changed();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> uid
+        {
+            get
+            {
+                return _uid;
+            }
+            set
+            {
+                OnuidChanging(value);
+                ReportPropertyChanging("uid");
+                _uid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("uid");
+                OnuidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _uid;
+        partial void OnuidChanging(Nullable<global::System.Int32> value);
+        partial void OnuidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="family_foodModel", Name="dapei")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -554,6 +731,135 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _uid;
         partial void OnuidChanging(Nullable<global::System.Int32> value);
         partial void OnuidChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="family_foodModel", Name="family")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class family : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 family 对象。
+        /// </summary>
+        /// <param name="id">id 属性的初始值。</param>
+        public static family Createfamily(global::System.Int32 id)
+        {
+            family family = new family();
+            family.id = id;
+            return family;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String signature
+        {
+            get
+            {
+                return _signature;
+            }
+            set
+            {
+                OnsignatureChanging(value);
+                ReportPropertyChanging("signature");
+                _signature = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("signature");
+                OnsignatureChanged();
+            }
+        }
+        private global::System.String _signature;
+        partial void OnsignatureChanging(global::System.String value);
+        partial void OnsignatureChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                OndescriptionChanging(value);
+                ReportPropertyChanging("description");
+                _description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("description");
+                OndescriptionChanged();
+            }
+        }
+        private global::System.String _description;
+        partial void OndescriptionChanging(global::System.String value);
+        partial void OndescriptionChanged();
 
         #endregion
 
@@ -1133,6 +1439,30 @@ namespace FamilyFood.Models
         private global::System.String _heath;
         partial void OnheathChanging(global::System.String value);
         partial void OnheathChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
 
         #endregion
 
