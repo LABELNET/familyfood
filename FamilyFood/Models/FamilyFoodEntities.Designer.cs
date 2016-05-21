@@ -144,6 +144,22 @@ namespace FamilyFood.Models
             }
         }
         private ObjectSet<user_table> _user_table;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<ucard> ucard
+        {
+            get
+            {
+                if ((_ucard == null))
+                {
+                    _ucard = base.CreateObjectSet<ucard>("ucard");
+                }
+                return _ucard;
+            }
+        }
+        private ObjectSet<ucard> _ucard;
 
         #endregion
 
@@ -187,6 +203,14 @@ namespace FamilyFood.Models
         public void AddTouser_table(user_table user_table)
         {
             base.AddObject("user_table", user_table);
+        }
+    
+        /// <summary>
+        /// 用于向 ucard EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToucard(ucard ucard)
+        {
+            base.AddObject("ucard", ucard);
         }
 
         #endregion
@@ -755,6 +779,183 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _status;
         partial void OnstatusChanging(Nullable<global::System.Int32> value);
         partial void OnstatusChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="family_foodModel", Name="ucard")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ucard : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 ucard 对象。
+        /// </summary>
+        /// <param name="id">id 属性的初始值。</param>
+        public static ucard Createucard(global::System.Int32 id)
+        {
+            ucard ucard = new ucard();
+            ucard.id = id;
+            return ucard;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String taste
+        {
+            get
+            {
+                return _taste;
+            }
+            set
+            {
+                OntasteChanging(value);
+                ReportPropertyChanging("taste");
+                _taste = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("taste");
+                OntasteChanged();
+            }
+        }
+        private global::System.String _taste;
+        partial void OntasteChanging(global::System.String value);
+        partial void OntasteChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String fruit
+        {
+            get
+            {
+                return _fruit;
+            }
+            set
+            {
+                OnfruitChanging(value);
+                ReportPropertyChanging("fruit");
+                _fruit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("fruit");
+                OnfruitChanged();
+            }
+        }
+        private global::System.String _fruit;
+        partial void OnfruitChanging(global::System.String value);
+        partial void OnfruitChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String vegetables
+        {
+            get
+            {
+                return _vegetables;
+            }
+            set
+            {
+                OnvegetablesChanging(value);
+                ReportPropertyChanging("vegetables");
+                _vegetables = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("vegetables");
+                OnvegetablesChanged();
+            }
+        }
+        private global::System.String _vegetables;
+        partial void OnvegetablesChanging(global::System.String value);
+        partial void OnvegetablesChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String dishes
+        {
+            get
+            {
+                return _dishes;
+            }
+            set
+            {
+                OndishesChanging(value);
+                ReportPropertyChanging("dishes");
+                _dishes = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("dishes");
+                OndishesChanged();
+            }
+        }
+        private global::System.String _dishes;
+        partial void OndishesChanging(global::System.String value);
+        partial void OndishesChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> uid
+        {
+            get
+            {
+                return _uid;
+            }
+            set
+            {
+                OnuidChanging(value);
+                ReportPropertyChanging("uid");
+                _uid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("uid");
+                OnuidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _uid;
+        partial void OnuidChanging(Nullable<global::System.Int32> value);
+        partial void OnuidChanged();
 
         #endregion
 
