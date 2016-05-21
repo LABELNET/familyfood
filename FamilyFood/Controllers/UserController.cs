@@ -29,9 +29,12 @@ namespace FamilyFood.Controllers
         /// 用户注册页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult Regiester() {
+        public ActionResult Register()
+        {
             return View();
         }
+
+
 
     }
 }
