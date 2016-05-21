@@ -43,6 +43,7 @@ namespace FamilyFood.Controllers
         }
 
         
+        
         /// <summary>
         /// 用户登录请求
         /// </summary>
@@ -103,7 +104,14 @@ namespace FamilyFood.Controllers
             Session.Abandon();
             return Redirect("/user/login");
         }
-        
+
+        /// <summary>
+        /// 添加和创建家庭页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyAdd() {
+            return View();
+        }
         
 
 

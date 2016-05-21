@@ -58,12 +58,33 @@
     <EntitySetMapping Name="user_table">
       <EntityTypeMapping TypeName="family_foodModel.user_table">
         <MappingFragment StoreEntitySet="user_table">
+          <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nick" ColumnName="nick" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="pass" ColumnName="pass" />
           <ScalarProperty Name="sex" ColumnName="sex" />
           <ScalarProperty Name="heath" ColumnName="heath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comment">
+      <EntityTypeMapping TypeName="family_foodModel.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="comment1" ColumnName="comment" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="family">
+      <EntityTypeMapping TypeName="family_foodModel.family">
+        <MappingFragment StoreEntitySet="family">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="signature" ColumnName="signature" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

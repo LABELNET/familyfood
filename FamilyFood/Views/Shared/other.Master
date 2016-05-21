@@ -1,36 +1,23 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="FamilyFood.Views.Shared.index" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="other.master.cs" Inherits="FamilyFood.Views.Shared.other" %>
 
 <%
-    
-     FamilyFood.Models.user_table user=null;
+    FamilyFood.Models.user_table user = null;
     try
     {
         user = (FamilyFood.Models.user_table)Session["user"];
-       
-            if (user == null)
-            {
-                Response.Redirect("/user/login");
-            }
-            else {
-                if (user.id == 0) {
-                    Response.Redirect("/user/login");
-                }
-
-                if (user.fid == 0) {
-                    Response.Redirect("/user/FamilyAdd"); //跳转到创建家庭和搜索家庭的页面
-                }
-            } 
-    }catch(Exception e){
-         Response.Redirect("/user/login");
     }
-   
-  %>
+    catch (Exception e)
+    {
+        //转500
+    }
+    
+    %>
 
 <!DOCTYPE html>
 <html lang="en">
-	<head runat="server">
+	<head id="Head1" runat="server">
 	
-     <asp:ContentPlaceHolder ID="head" runat="server">
+     <asp:ContentPlaceHolder ID="otherHead" runat="server">
     </asp:ContentPlaceHolder>
 
 		<!-- BEGIN META -->
@@ -150,6 +137,7 @@
 								<img src="../../assets/img/avatar1.jpg?1403934956" alt="" />
 								<span class="profile-info">
 									<%
+                                        
                                         if (user != null)
                                         {
                                          
@@ -201,7 +189,7 @@
 			</div><!--end .offcanvas-->
 			<!-- END OFFCANVAS LEFT -->
          
-          <asp:ContentPlaceHolder ID="MainContent" runat="server">
+          <asp:ContentPlaceHolder ID="OtherContent" runat="server">
           </asp:ContentPlaceHolder>
 
 			<!-- BEGIN MENUBAR-->
@@ -436,4 +424,3 @@
 
 	</body>
 </html>
-

@@ -7,6 +7,8 @@
     <EntitySet Name="food" EntityType="family_foodModel.food" />
     <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
     <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
+    <EntitySet Name="comment" EntityType="family_foodModel.comment" />
+    <EntitySet Name="family" EntityType="family_foodModel.family" />
   </EntityContainer>
   <EntityType Name="card">
     <Key>
@@ -67,5 +69,24 @@
     <Property Name="pass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="sex" Type="Int32" />
     <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="fid" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="comment1" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="uid" />
+    <Property Type="Int32" Name="fid" />
+  </EntityType>
+  <EntityType Name="family">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="signature" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

@@ -6,11 +6,25 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<div id="content" style="margin:20px;">
+	         <div id="content">
 
-    <h2>我是主页测试</h2>
+				<!-- BEGIN BLANK SECTION -->
+				<section>
+					<div class="section-header">
+						<ol class="breadcrumb">
+							<li><a href="#">主页</a></li>
+							<li class="active"></li>
+						</ol>
+					</div><!--end .section-header -->
+					<div class="section-body">
+                      
+                       <h2>主页测试加载</h2>
 
-</div>
+					</div><!--end .section-body -->
+				</section>
+
+				<!-- BEGIN BLANK SECTION -->
+			</div><!--end #content-->
    
 
 </asp:Content>
