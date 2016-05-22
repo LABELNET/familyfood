@@ -6,82 +6,75 @@ using System.Web.Mvc;
 
 namespace FamilyFood.Controllers
 {
-    public class HomeController : Controller
-
+    public class FoodController : Controller
     {
-
-       private FamilyFood.Models.FamilyFoodEntities db = new Models.FamilyFoodEntities();
-
         //
-        // GET: /Home/
+        // GET: /Food/
 
-        /// <summary>
-        /// 主页
-        /// </summary>
-        /// <returns></returns>
         public ActionResult Index()
         {
-
             return View();
         }
 
         /// <summary>
-        /// 关于页面
+        /// 食物列表
         /// </summary>
         /// <returns></returns>
-        public ActionResult About()
+        public ActionResult FoodListPage()
         {
-
             return View();
         }
 
         /// <summary>
-        /// 分类页面
+        /// 添加食物信息
         /// </summary>
         /// <returns></returns>
-        public ActionResult CatePage()
-        {
+        public ActionResult FoodAdd() {
+            return View();
+        }
 
+
+        /// <summary>
+        /// 食物修改页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FoodUpdate() {
             return View();
         }
 
         /// <summary>
-        /// 添加分类
+        /// 食物搭配列表页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult CateAdd()
+        public ActionResult FoodDapeiPage()
         {
-
             return View();
         }
 
         /// <summary>
-        /// 购买建议-根据食物搭配
+        /// 食物搭配添加页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult BuyAdviceByDaPei()
+        public ActionResult FoodDapeiPageAdd()
         {
-
             return View();
         }
 
         /// <summary>
-        /// 购买建议-根据健康
+        /// 食物资料卡
         /// </summary>
         /// <returns></returns>
-        public ActionResult BuyAdviceByHeath()
+        public ActionResult FoodIfoList()
         {
-
             return View();
         }
-
+        
         /// <summary>
-        /// 消耗统计页面
+        /// 添加食物资料卡
         /// </summary>
         /// <returns></returns>
-        public ActionResult EatChart()
+        public ActionResult FoodIfoAdd()
         {
-
             return View();
         }
 

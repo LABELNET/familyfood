@@ -189,6 +189,24 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 家庭成员列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyMembers()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 家庭信息修改
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyIfoUpdate()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// 错误页面
         /// </summary>
         /// <returns></returns>
