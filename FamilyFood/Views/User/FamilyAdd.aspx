@@ -10,7 +10,7 @@
 					<div class="section-header">
 						<ol class="breadcrumb">
 							<li><a href="#">家庭</a></li>
-							<li class="active">申请加入家庭</li>
+							<li class="active">申请/创建家庭</li>
 						</ol>
 					</div><!--end .section-header -->
 					<div class="section-body">
@@ -29,7 +29,7 @@
 							<form class="form floating-label" action="/home/index" accept-charset="utf-8" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" id="username" name="username">
-									<label for="username">家庭ID/家庭名称</label>
+									<label for="username">家庭小站ID</label>
 								</div>
 								
 								<br/>

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OtherContent" runat="server">
 
-    <h2>申请成功</h2>
+    <h2>操作成功</h2>
 
 </asp:Content>
 

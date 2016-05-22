@@ -27,7 +27,7 @@
 								<div class="card">
 									<div class="card-body ">
 										<div id="rootwizard2" class="form-wizard form-wizard-horizontal">
-											<form class="form floating-label form-validation" role="form" novalidate="novalidate">
+											<form class="form floating-label form-validation" role="form" action="/user/FamilyCreateRequest" novalidate="novalidate">
 												<div class="form-wizard-nav">
 													<div class="progress"><div class="progress-bar progress-bar-primary"></div></div>
 													<ul class="nav nav-justified">

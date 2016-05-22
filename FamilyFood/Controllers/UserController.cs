@@ -129,8 +129,14 @@ namespace FamilyFood.Controllers
         /// <param name="description"></param>
         /// <param name="signature"></param>
         /// <returns></returns>
-        public ActionResult FamilyCreate(String name, String description, String signature)
+        public ActionResult FamilyCreateRequest(String name, String description, String signature)
         {
+
+            if (Session["user"] == null)
+            {
+                 Response.Redirect("/user/login");
+            }
+                   
             //1.添加家庭信息
             family f = new family();
             f.description = description;
@@ -141,8 +147,7 @@ namespace FamilyFood.Controllers
             if (result > 0)
             {
                 //成功 //2.修改用户状态
-                if (Session["user"] != null)
-                {
+               
                     user_table user = (user_table)Session["user"];
                     user = db.user_table.SingleOrDefault<user_table>(u=>u.id==user.id);
                     user.fid=f.id;
@@ -156,11 +161,6 @@ namespace FamilyFood.Controllers
                     {
                         Response.Redirect("/user/error");
                     }
-                }
-                else 
-                {
-                    Response.Redirect("/user/login");
-                }
             }
             else {
                 Response.Redirect("/user/error");
