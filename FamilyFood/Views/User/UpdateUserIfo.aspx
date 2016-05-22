@@ -36,7 +36,7 @@
 							<li class="active"></li>
 						</ol>
 					</div><!--end .section-header -->
-					<div class="section-botdy">
+					<div class="section-body">
                       
                        <div class="row">
 							<div class="col-lg-12">

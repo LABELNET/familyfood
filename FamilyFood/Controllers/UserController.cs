@@ -254,7 +254,35 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FamilyIfoUpdate()
         {
+            user_table user = checkUser();
+            family f = db.family.SingleOrDefault<family>(fa => fa.id == user.fid);
+            ViewData["family"] = f;
             return View();
+        }
+
+        /// <summary>
+        /// 修改家庭信息请求
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyIfoUpdateRequest(String name, String signature, String description)
+        {
+            user_table user = checkUser();
+            family f = db.family.SingleOrDefault<family>(fa => fa.id == user.fid);
+            if (name.Length > 0) {
+                f.name = name;
+            }
+
+            if (signature.Length > 0) {
+                f.signature = signature;
+            }
+
+            if (description.Length > 0) {
+                f.description = description;
+            }
+
+            db.SaveChanges();
+
+            return Redirect("/user/FamilyPage");
         }
 
         /// <summary>
