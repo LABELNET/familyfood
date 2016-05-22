@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1589,10 +1590,26 @@
     <Content Include="assets\less\libs\wizard\MIT-LICENSE.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Food\FoodAdd.aspx" />
+    <Content Include="Views\Food\FoodDapeiPage.aspx" />
+    <Content Include="Views\Food\FoodDapeiPageAdd.aspx" />
+    <Content Include="Views\Food\FoodIfoAdd.aspx" />
+    <Content Include="Views\Food\FoodIfoList.aspx" />
+    <Content Include="Views\Food\FoodListPage.aspx" />
+    <Content Include="Views\Food\FoodUpdate.aspx" />
+    <Content Include="Views\Food\Index.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\BuyAdviceByDaPei.aspx" />
+    <Content Include="Views\Home\BuyAdviceByHeath.aspx" />
+    <Content Include="Views\Home\CateAdd.aspx" />
+    <Content Include="Views\Home\CatePage.aspx" />
+    <Content Include="Views\Home\EatChart.aspx" />
     <Content Include="Views\Home\index.aspx" />
     <Content Include="Views\User\error.aspx" />
     <Content Include="Views\User\FamilyAdd.aspx" />
     <Content Include="Views\User\FamilyCreate.aspx" />
+    <Content Include="Views\User\FamilyIfoUpdate.aspx" />
+    <Content Include="Views\User\FamilyMembers.aspx" />
     <Content Include="Views\User\FamilyPage.aspx" />
     <Content Include="Views\User\FamilyRequestStatus.aspx" />
     <Content Include="Views\User\Index.aspx" />

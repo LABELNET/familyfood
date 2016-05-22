@@ -53,7 +53,7 @@
 					<ul class="header-nav header-nav-options">
 						<li class="header-nav-brand" >
 							<div class="brand-holder">
-								<a href="#">
+								<a href="/home/index">
 									<span class="text-lg text-bold text-primary">家庭食物管理小站</span>
 								</a>
 							</div>
@@ -88,6 +88,13 @@
 										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
 										<strong>食物新鲜度提醒</strong><br/>
 										<small>你有些食物再不吃就坏了</small>
+									</a>
+								</li>
+                                <li>
+									<a class="alert alert-callout alert-warning" href="javascript:void(0);">
+										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
+										<strong>申请加入家庭</strong><br/>
+										<small>xxx/15036518579</small>
 									</a>
 								</li>
 								<li class="dropdown-header">Options</li>
@@ -137,7 +144,6 @@
 								<img src="../../assets/img/avatar1.jpg?1403934956" alt="" />
 								<span class="profile-info">
 									<%
-                                        
                                         if (user != null)
                                         {
                                          
@@ -161,9 +167,9 @@
 							</a>
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">家庭食物管理小站欢迎你</li>
-								<li><a href="#">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
-                                <li><a href="#">家庭主页</a></li>
-                                <li><a href="#">关于本站</a></li>
+								<li><a href="/user/index">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
+                                <li><a href="/user/familypage">家庭主页</a></li>
+                                <li><a href="/home/about">关于本站</a></li>
 								<li class="divider"></li>
 								<li><a href="/user/Layout"><i class="fa fa-fw fa-power-off text-danger"></i> 安全退出</a></li>
 							</ul><!--end .dropdown-menu -->
@@ -201,7 +207,7 @@
 						</a>
 					</div>
 					<div class="expanded">
-						<a href="#">
+						<a href="/home/index">
 							<span class="text-lg text-bold text-primary ">家庭食物管理小站</span>
 						</a>
 					</div>
@@ -213,7 +219,7 @@
 
 						<!-- BEGIN DASHBOARD -->
 						<li>
-							<a href="#" class="active">
+							<a href="/home/index" class="active">
 								<div class="gui-icon"><i class="md md-home"></i></div>
 								<span class="title">主页</span>
 							</a>
@@ -228,8 +234,8 @@
 							</a>
 
                             <ul>
-								<li><a href="#" ><span class="title">食物列表</span></a></li>
-								<li><a href="#" ><span class="title">添加食物</span></a></li>
+								<li><a href="/food/foodListPage" ><span class="title">食物列表</span></a></li>
+								<li><a href="/food/foodAdd" ><span class="title">添加食物</span></a></li>
 							</ul><!--end /submenu -->
 						
 						</li><!--end /menu-li -->
@@ -242,18 +248,22 @@
 							</a>
 
                             <ul>
-								    <li><a href="#" ><span class="title">搭配列表</span></a></li>
-								    <li><a href="#" ><span class="title">添加搭配</span></a></li>
+								    <li><a href="/food/FoodDapeiPage" ><span class="title">搭配列表</span></a></li>
+								    <li><a href="/food/FoodDapeiPageAdd" ><span class="title">添加搭配</span></a></li>
 							</ul><!--end /submenu -->
 							
 						</li><!--end /menu-li -->
 
                         	<!-- BEGIN DASHBOARD -->
-						<li>
-							<a href="#" >
+						<li class="gui-folder">
+							<a >
 								<div class="gui-icon"><i class="md md-web"></i></div>
 								<span class="title">食物资料卡</span>
 							</a>
+                              <ul>
+								    <li><a href="/food/FoodIfoList" ><span class="title">查看资料卡</span></a></li>
+								    <li><a href="/food/FoodIfoAdd" ><span class="title">添加资料卡</span></a></li>
+							 </ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 
                         <li class="gui-folder">
@@ -263,8 +273,8 @@
 							</a>
 
                              <ul>
-								    <li><a href="#" ><span class="title">分类列表</span></a></li>
-								    <li><a href="#" ><span class="title">添加分类</span></a></li>
+								    <li><a href="/home/CatePage" ><span class="title">分类列表</span></a></li>
+								    <li><a href="/home/CateAdd" ><span class="title">添加分类</span></a></li>
 							 </ul><!--end /submenu -->
 							
 						</li><!--end /menu-li -->
@@ -278,8 +288,8 @@
 								<span class="title">购买建议</span>
 							</a>
 							 <ul>
-								    <li><a href="#" ><span class="title">根据食物搭配</span></a></li>
-								    <li><a href="#" ><span class="title">根据身体健康</span></a></li>
+								    <li><a href="/home/BuyAdviceByDaPei" ><span class="title">根据食物搭配</span></a></li>
+								    <li><a href="/home/BuyAdviceByHeath" ><span class="title">根据身体健康</span></a></li>
 							 </ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 						<!-- END FORMS -->
@@ -287,7 +297,7 @@
 
                         <!-- BEGIN CHARTS -->
 						<li>
-							<a href="#" >
+							<a href="/home/EatChart" >
 								<div class="gui-icon"><i class="md md-assessment"></i></div>
 								<span class="title">消耗统计</span>
 							</a>
@@ -303,8 +313,10 @@
 						
                         
                              <ul>
-								    <li><a href="#" ><span class="title">成员管理</span></a></li>
-								    <li><a href="#" ><span class="title">主页管理</span></a></li>
+								    <li><a href="/user/FamilyMembers" ><span class="title">成员管理</span></a></li>
+								    <li><a href="/user/FamilyIfoUpdate" ><span class="title">家庭信息管理</span></a></li>
+								    <li><a href="/user/FamilyRequestStatus" ><span class="title">家庭申请及状态</span></a></li>
+
 							 </ul><!--end /submenu -->
 
 						</li><!--end /menu-li -->
@@ -313,16 +325,12 @@
 						
 
                         	<!-- BEGIN EMAIL -->
-						<li class="gui-folder">
-							<a>
+						<li>
+							<a href="/home/about">
 								<div class="gui-icon"><i class="md md-email"></i></div>
-								<span class="title">消息通知</span>
+								<span class="title">关于本站</span>
 							</a>
 
-                             <ul>
-								    <li><a href="#" ><span class="title">食物新鲜</span></a></li>
-								    <li><a href="#" ><span class="title">其他</span></a></li>
-							 </ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 
 					</ul>
