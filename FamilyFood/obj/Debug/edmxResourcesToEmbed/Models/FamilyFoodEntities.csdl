@@ -70,6 +70,7 @@
     <Property Name="sex" Type="Int32" />
     <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Type="Int32" Name="fid" />
+    <Property Type="Int32" Name="status" />
   </EntityType>
   <EntityType Name="comment">
     <Key>

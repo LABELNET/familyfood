@@ -58,6 +58,7 @@
     <EntitySetMapping Name="user_table">
       <EntityTypeMapping TypeName="family_foodModel.user_table">
         <MappingFragment StoreEntitySet="user_table">
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nick" ColumnName="nick" />

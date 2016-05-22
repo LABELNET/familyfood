@@ -88,5 +88,6 @@
     <Property Name="sex" Type="int" />
     <Property Name="heath" Type="varchar" MaxLength="50" />
     <Property Name="fid" Type="int" />
+    <Property Name="status" Type="int" />
   </EntityType>
 </Schema>

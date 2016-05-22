@@ -1591,6 +1591,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\index.aspx" />
     <Content Include="Views\User\FamilyAdd.aspx" />
+    <Content Include="Views\User\FamilyCreate.aspx" />
     <Content Include="Views\User\Index.aspx" />
     <Content Include="Views\User\Login.aspx" />
     <Content Include="Views\User\Register.aspx" />

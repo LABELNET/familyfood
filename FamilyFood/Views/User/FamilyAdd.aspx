@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/other.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OtherContent" runat="server">
+
+<% //在这里进行用户状态判断 %>
+
  <div id="content">
 
 				<section>
@@ -42,7 +45,7 @@
 								<h3 class="text-light">
 									没有家庭小站？
 								</h3>
-								<a class="btn btn-block btn-raised btn-primary" href="#">创建家庭小站</a>
+								<a class="btn btn-block btn-raised btn-primary" href="/user/FamilyCreate">创建家庭小站</a>
 								<br><br>
 									
 								</div><!--end .col -->

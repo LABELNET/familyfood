@@ -112,6 +112,25 @@ namespace FamilyFood.Controllers
         public ActionResult FamilyAdd() {
             return View();
         }
+
+        /// <summary>
+        /// 创建家庭页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyCreate()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 创建家庭成功页面，显示申请状态
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyRequestStatus()
+        {
+            return View();
+        }
+
         
 
 
