@@ -123,6 +123,53 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 创建家庭请求
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="signature"></param>
+        /// <returns></returns>
+        public ActionResult FamilyCreate(String name, String description, String signature)
+        {
+            //1.添加家庭信息
+            family f = new family();
+            f.description = description;
+            f.name = name;
+            f.signature = signature;
+            db.family.AddObject(f);
+            int result=db.SaveChanges();
+            if (result > 0)
+            {
+                //成功 //2.修改用户状态
+                if (Session["user"] != null)
+                {
+                    user_table user = (user_table)Session["user"];
+                    user = db.user_table.SingleOrDefault<user_table>(u=>u.id==user.id);
+                    user.fid=f.id;
+                    user.status = 0;  //创建家庭不用申请，直接修改为0
+                    int row=db.SaveChanges();
+                    if (row > 0)
+                    {
+                        Response.Redirect("/user/FamilyRequestStatus");
+                    }
+                    else 
+                    {
+                        Response.Redirect("/user/error");
+                    }
+                }
+                else 
+                {
+                    Response.Redirect("/user/login");
+                }
+            }
+            else {
+                Response.Redirect("/user/error");
+            }
+           
+            return View();
+        }
+
+        /// <summary>
         /// 创建家庭成功页面，显示申请状态
         /// </summary>
         /// <returns></returns>
@@ -131,6 +178,14 @@ namespace FamilyFood.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult error()
+        {
+            return View();
+        }
         
 
 
