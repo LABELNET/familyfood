@@ -7,7 +7,7 @@
 					<div class="section-header">
 						<ol class="breadcrumb">
 							<li><a href="#">家庭</a></li>
-							<li class="active"></li>
+							<li class="active">申请加入家庭</li>
 						</ol>
 					</div><!--end .section-header -->
 					<div class="section-body">
