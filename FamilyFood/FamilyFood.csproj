@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Views\Shared\other.Master.cs">
       <DependentUpon>other.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Shared\other.Master.designer.cs">
       <DependentUpon>other.Master</DependentUpon>

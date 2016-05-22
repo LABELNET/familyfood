@@ -93,6 +93,7 @@
           <Property Name="sex" Type="int" />
           <Property Name="heath" Type="varchar" MaxLength="50" />
           <Property Name="fid" Type="int" />
+          <Property Name="status" Type="int" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -168,6 +169,7 @@
           <Property Name="sex" Type="Int32" />
           <Property Name="heath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Type="Int32" Name="fid" />
+          <Property Type="Int32" Name="status" />
         </EntityType>
         <EntityType Name="comment">
           <Key>
@@ -250,6 +252,7 @@
           <EntitySetMapping Name="user_table">
             <EntityTypeMapping TypeName="family_foodModel.user_table">
               <MappingFragment StoreEntitySet="user_table">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nick" ColumnName="nick" />

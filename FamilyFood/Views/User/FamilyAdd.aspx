@@ -26,13 +26,13 @@
 							<form class="form floating-label" action="/home/index" accept-charset="utf-8" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" id="username" name="username">
-									<label for="username">家庭名称</label>
+									<label for="username">家庭ID/家庭名称</label>
 								</div>
 								
 								<br/>
 								<div class="row">
 									<div class="col-xs-6 text-right">
-										<button class="btn btn-primary btn-raised" type="submit">搜索</button>
+										<button class="btn btn-primary btn-raised" type="submit">搜索申请加入家庭小站</button>
 									</div><!--end .col -->
 								</div><!--end .row -->
 							</form>

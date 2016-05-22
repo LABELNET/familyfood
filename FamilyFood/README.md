@@ -5,6 +5,7 @@
  * 创建家庭、加入家庭
  * 个人中心：包括用户资料，用户卡片（最喜欢的）
  * 家庭 ： 加入家庭和搜索家庭并加入实现
+ * 用户添加字段，status，表明状态：0，正常，1，需要申请加入家庭
 
 
 # 2016.05.21
@@ -37,8 +38,8 @@
  * 数据库设计
 	```
 	  family :家庭  ： id, name(家庭名称)，description(家庭描述),signature（家庭签名）
-	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）,heath（健康）,fid(家庭id);
-	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),cid（资料卡id）,caid(分类)，status(状态)；
+	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）（0,男，1女）,heath（健康）,fid(家庭id)，status(状态：0正常，1需要申请加入家庭);
+	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),cid（资料卡id）,caid(分类)，status(状态)（0,正常存储，1消耗完毕）；
 	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效);
 	  cate : 食物分类    :id,content(分类内容),uid;
 	  dapei: 食物搭配    :id,dp(搭配内容),uid;
