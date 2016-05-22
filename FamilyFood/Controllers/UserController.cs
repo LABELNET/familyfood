@@ -155,6 +155,7 @@ namespace FamilyFood.Controllers
                     int row=db.SaveChanges();
                     if (row > 0)
                     {
+                        Session["user"] = user;
                         Response.Redirect("/user/FamilyRequestStatus");
                     }
                     else 
@@ -179,7 +180,16 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 家庭主页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyPage()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 错误页面
         /// </summary>
         /// <returns></returns>
         public ActionResult error()
