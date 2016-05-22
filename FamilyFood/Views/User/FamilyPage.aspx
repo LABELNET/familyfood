@@ -42,8 +42,17 @@
 							<div class="col-md-3 col-xs-5">
 								<h3><%=f.name%><br/><small><%=f.description%></small></h3>
 							</div><!--end .col -->
+                            <div class="col-md-9 col-xs-7">
+								<div class="width-3 text-center pull-right">
+									<span class="text-light opacity-75">编辑<a href="/user/FamilyIfoUpdate" class="btn btn-icon-toggle"><i class="md md-colorize"></i></a></span>
+								</div>
+							</div><!--end .col -->
+
 							
 						</div><!--end .row -->
+
+
+
 						<div class="overlay overlay-shade-bottom stick-bottom-left force-padding text-right">
                           
                            <small><%=f.signature %></small>
