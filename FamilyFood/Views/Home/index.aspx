@@ -16,7 +16,7 @@
 							<li class="active"></li>
 						</ol>
 					</div><!--end .section-header -->
-					<div class="section-body">
+					<div class="section-botdy">
                       
                        <h2>主页测试加载</h2>
 

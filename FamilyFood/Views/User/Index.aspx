@@ -67,8 +67,8 @@
 								</div>
 							</div><!--end .col -->
                             <div class="overlay overlay-shade-bottom stick-bottom-left force-padding text-right">
-                                <h4 style="color:#ffffff">编辑爱好<a href="/user/UpdateUserCard" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
-                             <h4 style="color:#ffffff">编辑个人信息<a href="/user/UpdateUserIfo" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
+                                <h4 style="color:#ffffff">编辑爱好<a href="/user/UpdateUserCard" class="btn btn-icon-toggle"><i class="md md-colorize"></i></a></h4>
+                                <h4 style="color:#ffffff">编辑个人信息<a href="/user/UpdateUserIfo" class="btn btn-icon-toggle"><i class="md md-colorize"></i></a></h4>
                             </div>
 						</div><!--end .row -->
            

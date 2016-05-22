@@ -19,6 +19,10 @@ namespace FamilyFood.Controllers
         public ActionResult Index()
         {
             user_table user = (user_table)Session["user"];
+            if (user == null) {
+                Response.Redirect("/user/login");
+            }
+
             ucard uca=db.ucard.SingleOrDefault<ucard>(uc => uc.uid == user.id);
             if (uca == null) {
                 uca = new ucard();
@@ -233,16 +237,58 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 修改用户信息业务
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateUserRequest(String nick, String heath, int gendre)
+        {
+            user_table user= checkUser();
+            user = db.user_table.SingleOrDefault<user_table>(u => user.id == user.id);
+            if (nick.Length > 0) {
+                user.nick = nick;
+            }
+
+            if (heath.Length > 0) {
+                user.heath = heath;
+            }
+
+            if (user.sex!=gendre)
+            {
+                user.sex = gendre;
+            }
+            int result=db.SaveChanges();
+            if (result > 0) {
+                Session["user"] = user;
+                Response.Redirect("/user/index");
+            }
+            return View();
+        }
+        
+
+        /// <summary>
         /// 用户编辑爱好
         /// </summary>
         /// <returns></returns>
         public ActionResult UpdateUserCard()
         {
+            user_table user = checkUser();
+            ucard uca=db.ucard.SingleOrDefault<ucard>(uc=>uc.uid==user.id);
+            ViewData["ucard"] = uca;
             return View();
         }
-        
 
 
+        /// <summary>
+        /// 检查用户是否还在登录状态
+        /// </summary>
+        /// <returns></returns>
+        public user_table checkUser() {
+            if (Session["user"] == null)
+            {
+                Response.Redirect("/user/login");
+            }
+            return (user_table)Session["user"];
+        }
 
     }
 }

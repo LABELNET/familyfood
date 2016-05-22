@@ -1,5 +1,4 @@
 E:\毕业设计-餐\FamilyFood\FamilyFood\bin\FamilyFood.dll
 E:\毕业设计-餐\FamilyFood\FamilyFood\bin\FamilyFood.pdb
-E:\毕业设计-餐\FamilyFood\FamilyFood\obj\Debug\FamilyFood.csprojResolveAssemblyReference.cache
 E:\毕业设计-餐\FamilyFood\FamilyFood\obj\Debug\FamilyFood.dll
 E:\毕业设计-餐\FamilyFood\FamilyFood\obj\Debug\FamilyFood.pdb
