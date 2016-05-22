@@ -1609,6 +1609,7 @@
     <Content Include="Views\User\error.aspx" />
     <Content Include="Views\User\FamilyAdd.aspx" />
     <Content Include="Views\User\FamilyCreate.aspx" />
+    <Content Include="Views\User\FamilyIdPage.aspx" />
     <Content Include="Views\User\FamilyIfoUpdate.aspx" />
     <Content Include="Views\User\FamilyMembers.aspx" />
     <Content Include="Views\User\FamilyPage.aspx" />

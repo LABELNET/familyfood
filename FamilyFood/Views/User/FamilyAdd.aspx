@@ -26,9 +26,9 @@
 							<br/>
 							<span class="text-lg text-bold text-primary">家庭食物管理小站</span>
 							<br/><br/>
-							<form class="form floating-label" action="/home/index" accept-charset="utf-8" method="post">
+							<form class="form floating-label" action="/user/FamilyIdPage" accept-charset="utf-8" method="post">
 								<div class="form-group">
-									<input type="text" class="form-control" id="username" name="username">
+									<input type="text" class="form-control" id="username" name="id">
 									<label for="username">家庭小站ID</label>
 								</div>
 								

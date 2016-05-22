@@ -96,6 +96,8 @@ namespace FamilyFood.Controllers
             user.nick = nick;
             user.phone = phone;
             user.pass = pass;
+            user.fid = 0;
+            user.status = 1;
             db.user_table.AddObject(user);
             int result= db.SaveChanges();
             if (result > 0)
@@ -123,6 +125,7 @@ namespace FamilyFood.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult FamilyAdd() {
+            checkUser();
             return View();
         }
 
@@ -193,6 +196,19 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 根据家庭id，申请加入家庭及其页面
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult FamilyIdPage(int id)
+        {
+            family fa = db.family.SingleOrDefault<family>(f => f.id == id);
+            ViewData["family"] = fa;//家庭信息
+            return View();
+        }
+
+
+        /// <summary>
         /// 家庭主页
         /// 1.家庭信息
         /// 2.家庭成员信息
@@ -245,6 +261,10 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FamilyMembers()
         {
+
+            user_table user = checkUser();
+            List<user_table> users = (from u in db.user_table where u.fid == user.fid select u).ToList<user_table>();
+            ViewData["users"] = users;//家庭成员列表
             return View();
         }
 
