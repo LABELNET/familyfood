@@ -80,6 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FamilyFoodEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\model\CommentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Shared\index.Master.cs">
       <DependentUpon>index.Master</DependentUpon>

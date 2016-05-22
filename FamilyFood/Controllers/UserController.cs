@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FamilyFood.Models;
+using FamilyFood.Models.model;
 
 namespace FamilyFood.Controllers
 {
@@ -193,10 +194,32 @@ namespace FamilyFood.Controllers
 
         /// <summary>
         /// 家庭主页
+        /// 1.家庭信息
+        /// 2.家庭成员信息
+        /// 3.留言列表
+        /// 
         /// </summary>
         /// <returns></returns>
         public ActionResult FamilyPage()
         {
+            user_table user = checkUser();
+            family fa = db.family.SingleOrDefault<family>(f => f.id == user.fid);
+            ViewData["family"] = fa;//家庭信息
+            List<user_table> users=(from u in db.user_table where u.fid==fa.id select u).ToList<user_table>();
+            ViewData["users"] = users;//家庭成员信息
+            List<comment> comments = (from c in db.comment where c.fid == fa.id orderby c.id descending select c).ToList<comment>();
+            List<CommentModel> modes=new List<CommentModel>();
+
+            foreach(comment cs in comments){
+                CommentModel model = new CommentModel();
+                model.C = cs;
+                user_table ut=db.user_table.SingleOrDefault<user_table>(u => u.id == cs.uid);
+                model.U = ut;
+                modes.Add(model);
+            }
+
+            ViewData["modes"] = modes;//留言信息
+
             return View();
         }
 
