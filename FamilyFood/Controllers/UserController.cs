@@ -18,9 +18,15 @@ namespace FamilyFood.Controllers
 
         public ActionResult Index()
         {
-
-            
-
+            user_table user = (user_table)Session["user"];
+            ucard uca=db.ucard.SingleOrDefault<ucard>(uc => uc.uid == user.id);
+            if (uca == null) {
+                uca = new ucard();
+                uca.uid = user.id;
+                db.ucard.AddObject(uca);
+                db.SaveChanges();
+            }
+            ViewData["ucard"] = uca;
             return View();
         }
 
@@ -68,6 +74,8 @@ namespace FamilyFood.Controllers
                return Redirect("/user/register");
            }
         }
+
+
 
         
         /// <summary>
@@ -211,6 +219,24 @@ namespace FamilyFood.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult error()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 用户编辑资料
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateUserIfo()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 用户编辑爱好
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateUserCard()
         {
             return View();
         }

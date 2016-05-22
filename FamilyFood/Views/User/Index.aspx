@@ -4,9 +4,11 @@
 
 <% 
     FamilyFood.Models.user_table user = null;
+    FamilyFood.Models.ucard ucard = null;
     try
     {
         user = (FamilyFood.Models.user_table)Session["user"];
+        ucard = (FamilyFood.Models.ucard)ViewData["ucard"];
 
         if (user == null)
         {
@@ -65,8 +67,8 @@
 								</div>
 							</div><!--end .col -->
                             <div class="overlay overlay-shade-bottom stick-bottom-left force-padding text-right">
-                                <h4 style="color:#ffffff">编辑爱好<a href="#" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
-                             <h4 style="color:#ffffff">编辑个人信息<a href="#" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
+                                <h4 style="color:#ffffff">编辑爱好<a href="/user/UpdateUserCard" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
+                             <h4 style="color:#ffffff">编辑个人信息<a href="/user/UpdateUserIfo" class="btn btn-icon-toggle" data-toggle="dropdown" aria-expanded="false"><i class="md md-colorize"></i></a></h4>
                             </div>
 						</div><!--end .row -->
            
@@ -83,7 +85,7 @@
 										    <header>最喜欢的口味</header>
 									    </div><!--end .card-head -->
 									    <div class="card-body style-primary" style="display: block;">
-										    <p>Ad ius duis dissentiunt, an sit harum primis persecuti, adipisci tacimates mediocrem sit et. Id illud voluptaria omittantur qui, te affert nostro mel. Cu conceptam vituperata temporibus has.</p>
+										    <p><%=ucard.taste==null?"还没内容哦":ucard.taste %></p>
 									    </div><!--end .card-body -->
 								    </div><!--end .card -->
 
@@ -103,7 +105,7 @@
 										    <header>最喜欢的水果</header>
 									    </div><!--end .card-head -->
 									    <div class="card-body style-primary" style="display: block;">
-										    <p>Ad ius duis dissentiunt, an sit harum primis persecuti, adipisci tacimates mediocrem sit et. Id illud voluptaria omittantur qui, te affert nostro mel. Cu conceptam vituperata temporibus has.</p>
+										    <p><%=ucard.fruit == null ? "还没有内容哦" : ucard.fruit%></p>
 									    </div><!--end .card-body -->
 								    </div><!--end .card -->
 
@@ -122,7 +124,7 @@
 										    <header>最喜欢的蔬菜</header>
 									    </div><!--end .card-head -->
 									    <div class="card-body style-primary" style="display: block;">
-										    <p>Ad ius duis dissentiunt, an sit harum primis persecuti, adipisci tacimates mediocrem sit et. Id illud voluptaria omittantur qui, te affert nostro mel. Cu conceptam vituperata temporibus has.</p>
+										    <p><%=ucard.vegetables==null?"还没有内容哦":ucard.vegetables %></p>
 									    </div><!--end .card-body -->
 								    </div><!--end .card -->
                                     </div><!--end .section-body -->
@@ -140,7 +142,7 @@
 										    <header>最喜欢的菜品</header>
 									    </div><!--end .card-head -->
 									    <div class="card-body style-primary" style="display: block;">
-										    <p>Ad ius duis dissentiunt, an sit harum primis persecuti, adipisci tacimates mediocrem sit et. Id illud voluptaria omittantur qui, te affert nostro mel. Cu conceptam vituperata temporibus has.</p>
+										    <p><%=ucard.dishes==null?"还没有内容哦":ucard.dishes %></p>
 									    </div><!--end .card-body -->
 								    </div><!--end .card -->
 
