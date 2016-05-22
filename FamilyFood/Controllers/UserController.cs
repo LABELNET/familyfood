@@ -277,6 +277,42 @@ namespace FamilyFood.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 用户爱好请求
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateUserCardRequest(int id,String taste, String fruit, String vegetables, String dishes)
+        {
+            if (id > 0)
+            {
+                ucard uc=db.ucard.SingleOrDefault<ucard>(u => u.id == id);
+
+                if (taste.Length > 0)
+                {
+                    uc.taste = taste;
+                }
+
+                if (fruit.Length > 0) {
+                    uc.fruit = fruit;
+                }
+
+                if (vegetables.Length > 0) {
+                    uc.vegetables = vegetables;
+                }
+
+                if (dishes.Length > 0) {
+                    uc.dishes = dishes;
+                }
+
+                int row=  db.SaveChanges();
+                if (row > 0) {
+                    Response.Redirect("/user/index");
+                }
+            }
+
+            return View();
+        }  
+
 
         /// <summary>
         /// 检查用户是否还在登录状态
