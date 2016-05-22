@@ -224,6 +224,22 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 留言请求提交
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FamilyPageRequest(String content) {
+            user_table u = checkUser();
+            comment c = new comment();
+            c.uid = u.id;
+            c.fid = u.fid;
+            c.comment1 = content;
+            db.comment.AddObject(c);
+            db.SaveChanges();
+
+            return Redirect("/user/FamilyPage");
+        }
+
+        /// <summary>
         /// 家庭成员列表
         /// </summary>
         /// <returns></returns>

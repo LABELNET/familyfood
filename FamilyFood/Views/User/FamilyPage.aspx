@@ -60,17 +60,17 @@
 								<h2>留言/备忘</h2>
 
 								<!-- BEGIN ENTER MESSAGE -->
-								<form class="form">
+								<form class="form" action="/user/FamilyPageRequest">
 									<div class="card no-margin">
 										<div class="card-body">
 											<div class="form-group floating-label">
-												<textarea name="status" id="status" class="form-control autosize" rows="1"></textarea>
+												<textarea name="content" id="status" class="form-control autosize" rows="1"></textarea>
 												<label for="status">留言与备忘</label>
 											</div>
 										</div><!--end .card-body -->
 										<div class="card-actionbar">
 											<div class="card-actionbar-row">
-												<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction">Post</a>
+												<button type="submit" class="btn btn-flat btn-accent ink-reaction">发布</a>
 											</div><!--end .card-actionbar-row -->
 										</div><!--end .card-actionbar -->
 									</div><!--end .card -->
