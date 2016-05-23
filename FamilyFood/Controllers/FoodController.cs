@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FamilyFood.Models;
+using FamilyFood.Models.model;
 
 namespace FamilyFood.Controllers
 {
@@ -11,6 +12,7 @@ namespace FamilyFood.Controllers
     {
 
         private FamilyFood.Models.FamilyFoodEntities db = new Models.FamilyFoodEntities();
+        private int pagesize = 10;
         //
         // GET: /Food/
 
@@ -23,9 +25,32 @@ namespace FamilyFood.Controllers
         /// 食物列表
         /// </summary>
         /// <returns>食物信息、分类信息、用户信息</returns>
-        public ActionResult FoodListPage()
+        public ActionResult FoodListPage(int? p)
         {
+            if (p == null) {
+                p = 1;
+            }
 
+            if (p < 1) {
+                p = 1;
+            }
+
+            user_table user = checkUser();
+            var data = from f in db.food
+                       join c in db.cate
+                       on f.caid equals c.id
+                       join u in db.user_table
+                       on f.uid equals u.id
+                       where f.fid==user.fid && f.status==0
+                       orderby f.id descending
+                       select new FoodModel
+                       {
+                           U=u,
+                           C=c,
+                           F=f
+                       };
+            List<FoodModel> foods = data.Skip((p.Value-1)*pagesize).Take(pagesize).ToList<FoodModel>();
+            ViewData["foods"] = foods;
             return View();
         }
 

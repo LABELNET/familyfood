@@ -300,7 +300,7 @@ namespace FamilyFood.Controllers
             user_table user = checkUser();
             family fa = db.family.SingleOrDefault<family>(f => f.id == user.fid);
             ViewData["family"] = fa;//家庭信息
-            List<user_table> users=(from u in db.user_table where u.fid==fa.id select u).ToList<user_table>();
+            List<user_table> users=(from u in db.user_table where u.fid==fa.id && u.status==0 select u).ToList<user_table>();
             ViewData["users"] = users;//家庭成员信息
             List<comment> comments = (from c in db.comment where c.fid == fa.id orderby c.id descending select c).ToList<comment>();
             List<CommentModel> modes=new List<CommentModel>();
