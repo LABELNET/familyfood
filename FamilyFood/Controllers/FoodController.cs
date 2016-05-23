@@ -165,6 +165,65 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 添加食物搭配业务
+        /// </summary>
+        /// <param name="dp">搭配内容</param>
+        /// <returns></returns>
+        public ActionResult FoodDapeiPageAddRequest(String dp)
+        {
+            user_table u = checkUser();
+            dapei d = new dapei();
+            d.uid = u.id;
+            d.fid = u.fid;
+            d.dp = dp;
+            db.dapei.AddObject(d);
+            db.SaveChanges();
+
+            return Redirect("/food/FoodDapeiPage");
+        }
+
+     
+        /// <summary>
+        /// 食物搭配修改页面
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult FoodDapeiPageUpdate(int id)
+        {
+             dapei dd=db.dapei.SingleOrDefault<dapei>(d=>d.id==id);
+             ViewData["dapei"] = dd;
+            return View();
+        }
+
+        /// <summary>
+        /// 食物搭配修改业务
+        /// </summary>
+        /// <param name="id">搭配id</param>
+        /// <param name="dp">搭配内容</param>
+        /// <returns></returns>
+        public ActionResult FoodDapeiPageUpdateRequest(int id,String dp)
+        {
+            dapei dd = db.dapei.SingleOrDefault<dapei>(d => d.id == id);
+            dd.dp = dp;
+            db.SaveChanges();
+            return Redirect("/food/FoodDapeiPage");
+        }
+
+
+        /// <summary>
+        /// 食物搭配删除业务实现
+        /// </summary>
+        /// <param name="id">搭配Id</param>
+        /// <returns></returns>
+        public ActionResult FoodDapeiPageDeleteRequest(int id)
+        {
+            dapei dd = db.dapei.SingleOrDefault<dapei>(d => d.id == id);
+            db.dapei.DeleteObject(dd);
+            db.SaveChanges();
+            return Redirect("/food/FoodDapeiPage");
+        }
+
+        /// <summary>
         /// 食物资料卡
         /// </summary>
         /// <returns></returns>
@@ -179,7 +238,86 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FoodIfoAdd()
         {
+            user_table user=checkUser();
+            //需要食物信息
+            List<food> foods = (from f in db.food where f.fid == user.fid orderby f.id descending select f).ToList<food>();
+            ViewData["foods"] = foods;
             return View();
+        }
+
+
+        /// <summary>
+        /// 添加食物资料卡信息
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="message"></param>
+        /// <param name="description"></param>
+        /// <param name="fid"></param>
+        /// <returns></returns>
+        public ActionResult FoodIfoAddRequest(String summary, String message, String description,int fid)
+        {
+            user_table us = checkUser();
+            card c = new card();
+            c.description = description;
+            c.summary = summary;
+            c.message = message;
+            c.fid = fid;
+            c.uid = us.id;
+            db.card.AddObject(c);
+            db.SaveChanges();
+            return Redirect("/food/FoodIfoList");
+        }
+
+       /// <summary>
+        /// 修改食物资料卡信息
+       /// </summary>
+       /// <param name="id"></param>
+       /// <returns></returns>
+        public ActionResult FoodIfoUpdate(int id)
+        {
+            user_table user = checkUser();
+            //需要食物信息
+            List<food> foods = (from f in db.food where f.fid == user.fid orderby f.id descending select f).ToList<food>();
+            ViewData["foods"] = foods;
+            //食物信息
+            card ca=db.card.SingleOrDefault<card>(c=>c.id==id);
+            ViewData["card"] = ca;
+
+            return View();
+        }
+
+        /// <summary>
+        /// 修改食物资料卡信息
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="message"></param>
+        /// <param name="description"></param>
+        /// <param name="fid"></param>
+        /// <param name="cid"></param>
+        /// <returns></returns>
+        public ActionResult FoodIfoUpdateRequest(String summary, String message, String description, int fid,int cid)
+        {
+            user_table us = checkUser();
+            card c = db.card.SingleOrDefault<card>(ca => ca.id == cid);
+            c.description = description;
+            c.summary = summary;
+            c.message = message;
+            c.fid = fid;
+            db.SaveChanges();
+            return Redirect("/food/FoodIfoList");
+        }
+
+
+        /// <summary>
+        /// 删除食物资料卡
+        /// </summary>
+        /// <param name="cid">资料卡id</param>
+        /// <returns></returns>
+        public ActionResult FoodIfoDeleteRequest(int cid) {
+            card c = db.card.SingleOrDefault<card>(ca => ca.id == cid);
+            db.DeleteObject(c);
+            db.SaveChanges();
+            return Redirect("/food/FoodIfoList");
         }
 
 
