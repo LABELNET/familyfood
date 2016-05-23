@@ -5,10 +5,10 @@
     try
     {
         user = (FamilyFood.Models.user_table)Session["user"];
+        
     }
     catch (Exception e)
     {
-        //转500
     }
     
     %>
@@ -90,16 +90,9 @@
 										<small>你有些食物再不吃就坏了</small>
 									</a>
 								</li>
-                                <li>
-									<a class="alert alert-callout alert-warning" href="javascript:void(0);">
-										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
-										<strong>申请加入家庭</strong><br/>
-										<small>xxx/15036518579</small>
-									</a>
-								</li>
+                            
 								<li class="dropdown-header">Options</li>
 								<li><a href="#">查看全部消息 <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
-								<li><a href="../../html/pages/login.html">标记为已读<span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
 							</ul><!--end .dropdown-menu -->
 						</li><!--end .dropdown -->
 						<li class="dropdown hidden-xs">

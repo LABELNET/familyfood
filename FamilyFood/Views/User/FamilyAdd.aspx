@@ -2,7 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OtherContent" runat="server">
 
-<% //在这里进行用户状态判断 %>
+<script type="text/javascript">
+
+    function checkID() {
+        var id = $("#number2").val();
+        return !isNaN(id);
+    }
+
+</script>
 
  <div id="content">
 
@@ -26,10 +33,10 @@
 							<br/>
 							<span class="text-lg text-bold text-primary">家庭食物管理小站</span>
 							<br/><br/>
-							<form class="form floating-label" action="/user/FamilyIdPage" accept-charset="utf-8" method="post">
+							<form class="form floating-label form-validate" action="/user/FamilyIdPage" onsubmit="return checkID();" accept-charset="utf-8" method="post">
 								<div class="form-group">
-									<input type="text" class="form-control" id="username" name="id">
-									<label for="username">家庭小站ID</label>
+                                <input type="text" class="form-control dirty" id="number2" name="id" data-rule-number="true" required="" aria-required="true" aria-invalid="true" aria-describedby="number2-error">
+									<label for="number2">家庭小站ID</label>
 								</div>
 								
 								<br/>

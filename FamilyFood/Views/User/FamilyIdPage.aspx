@@ -43,6 +43,14 @@
 					</div><!--end .section-body -->
 				</section>
                 
+                <div class="card-body">
+                  <form class="form" action="/user/FamilyIdPageRequest" style="margin-top:80px;">
+                    <input type="hidden" name="id" value="<%=f.id %>" />
+					<button type="submit" class="btn btn-info btn-block">申请加入： <%=f.name%></button>
+					<a type="button" class="btn btn-danger btn-block" href="/user/familyadd">返回</a>
+                  </form>
+				</div>
+
 				
 					</div><!--end .section-body -->
 				</section>

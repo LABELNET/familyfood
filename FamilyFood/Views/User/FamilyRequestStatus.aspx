@@ -47,6 +47,8 @@
                                                           {
                                                    %>
 											 	<a id="toast-error"  class="btn btn-block btn-raised btn-default-bright ink-reaction"><i class="md md-notifications pull-right text-danger"></i>对不起，你申请的家庭，拒绝了你的申请</a>
+                                                <a type="button" class="btn btn-info btn-block" href="/user/FamilyIdZaiRequest?id=<%=user.id %>">再次申请</a>
+					                            <a type="button" class="btn btn-danger btn-block" href="/user/FamilyIdDeleteRequest?id=<%=user.id %>">删除申请</a>     
                                                       <%
                                                           } if (user.status == 1)
                                                           {

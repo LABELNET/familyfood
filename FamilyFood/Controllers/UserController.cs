@@ -192,6 +192,9 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FamilyRequestStatus()
         {
+            user_table u = checkUser();
+            u = db.user_table.SingleOrDefault<user_table>(us => us.id == u.id);
+            Session["user"] = u;
             return View();
         }
 
@@ -202,10 +205,86 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FamilyIdPage(int id)
         {
+            user_table u = checkUser();
+            if (u.status != 1) {
+                Redirect("/user/FamilyRequestStatus");//不是1的话，处于申请状态下，不需要提出申请操作
+            }
+
             family fa = db.family.SingleOrDefault<family>(f => f.id == id);
             ViewData["family"] = fa;//家庭信息
             return View();
         }
+
+        /// <summary>
+        /// 申请加入家庭请求
+        /// </summary>
+        /// <param name="id">家庭id</param>
+        /// <returns></returns>
+        public ActionResult FamilyIdPageRequest(int id) {
+
+            user_table ut = checkUser();
+            ut= db.user_table.SingleOrDefault<user_table>(u => u.id == ut.id);
+            ut.fid = id;
+            ut.status = 2;//已申请，等待审核
+            db.SaveChanges();
+            Session["user"] = ut;
+            return Redirect("/user/FamilyRequestStatus");
+        }
+
+        /// <summary>
+        /// 确认加入家庭
+        /// </summary>
+        /// <param name="id">用户id</param>
+        /// <returns></returns>
+        public ActionResult FamilyIdSureRequest(int id)
+        {
+             user_table ut = db.user_table.SingleOrDefault<user_table>(u => u.id == id);
+             ut.status =0;//确认加入
+             db.SaveChanges();
+             return Redirect("/home/messagePage");
+        }
+
+        /// <summary>
+        /// 拒绝加入家庭
+        /// </summary>
+        /// <param name="id">用户id</param>
+        /// <returns></returns>
+        public ActionResult FamilyIdCancelRequest(int id)
+        {
+            user_table ut = db.user_table.SingleOrDefault<user_table>(u => u.id == id);
+            ut.status = 3;//拒绝加入
+            db.SaveChanges();
+            return Redirect("/home/messagePage");
+        }
+
+        /// <summary>
+        /// 删除申请
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult FamilyIdDeleteRequest(int id)
+        {
+            user_table ut = db.user_table.SingleOrDefault<user_table>(u => u.id == id);
+            ut.status = 1;//不加入操作
+            db.SaveChanges();
+            Session["user"] = ut;
+            return Redirect("/user/FamilyRequestStatus");
+        }
+
+        /// <summary>
+        /// 重新申请
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult FamilyIdZaiRequest(int id)
+        {
+            user_table ut = db.user_table.SingleOrDefault<user_table>(u => u.id == id);
+            ut.status = 2;//重新申请
+            db.SaveChanges();
+            Session["user"] = ut;
+            return Redirect("/user/FamilyRequestStatus");
+        }
+
 
 
         /// <summary>

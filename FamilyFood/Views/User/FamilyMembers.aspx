@@ -77,7 +77,7 @@
                                                           if (user.id == us.id)
                                                           {
                                                               %>
-                                                        <button type="button" class="btn btn-block ink-reaction btn-danger">退出家庭</button>
+                                                        <a href="/user/FamilyIdDeleteRequest?id=<%=user.id %>" class="btn btn-block ink-reaction btn-danger">退出家庭</button>
                                                          <%
                                                           }else{ %>
                                                              <button type="button" class="btn btn-block ink-reaction btn-success">没有权限</button>

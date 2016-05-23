@@ -1606,6 +1606,7 @@
     <Content Include="Views\Home\CatePage.aspx" />
     <Content Include="Views\Home\EatChart.aspx" />
     <Content Include="Views\Home\index.aspx" />
+    <Content Include="Views\Home\MessagePage.aspx" />
     <Content Include="Views\User\error.aspx" />
     <Content Include="Views\User\FamilyAdd.aspx" />
     <Content Include="Views\User\FamilyCreate.aspx" />

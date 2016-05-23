@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/other.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/index.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="OtherContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    
 <%
     FamilyFood.Models.family f = null;
     List<FamilyFood.Models.user_table> users = null;
@@ -250,6 +251,6 @@
 
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="otherHead" runat="server">
-  <title>家庭主页</title>
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+ <title>家庭主页</title>
 </asp:Content>

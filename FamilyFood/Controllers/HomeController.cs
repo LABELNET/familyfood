@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FamilyFood.Models;
 
 namespace FamilyFood.Controllers
 {
@@ -83,6 +84,37 @@ namespace FamilyFood.Controllers
         {
 
             return View();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult MessagePage()
+        {
+
+            user_table user = checkUser();
+            //申请加入家庭的人
+            List<FamilyFood.Models.user_table> users = (from u in db.user_table where u.fid == user.fid && u.status == 2 select u).ToList<FamilyFood.Models.user_table>();
+            ViewData["users"] = users;
+
+            //食物新鲜度显示
+            return View();
+        }
+
+
+        /// <summary>
+        /// 检查用户是否还在登录状态
+        /// </summary>
+        /// <returns></returns>
+        public user_table checkUser()
+        {
+            if (Session["user"] == null)
+            {
+                Response.Redirect("/user/login");
+            }
+            return (user_table)Session["user"];
         }
 
     }
