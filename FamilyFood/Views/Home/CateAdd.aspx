@@ -25,7 +25,7 @@
 								</article>
 							</div><!--end .col -->
 							<div class="col-lg-offset-1 col-md-8">
-								<form class="form-validate" action="/user/UpdateUserRequest">
+								<form class="form-validate" action="/home/CateAddRequest">
 									<div class="card">
 										<div class="card-head style-primary">
 											<header>添加食物分类</header>
@@ -35,7 +35,7 @@
 												<div class="col-sm-6">
 													<div class="form-group">
                                                         <label >分类内容</label>
-														<input type="text" name="nick" class="form-control" id="Firstname2">
+														<input type="text" name="content" class="form-control" id="Firstname2">
 														
 													</div>
 												</div>

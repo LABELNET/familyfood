@@ -18,6 +18,8 @@
     <Property Name="description" Type="text" />
     <Property Name="message" Type="text" />
     <Property Name="summary" Type="text" />
+    <Property Name="fid" Type="int" />
+    <Property Name="uid" Type="int" />
   </EntityType>
   <EntityType Name="cate">
     <Key>
@@ -26,6 +28,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="catecontent" Type="varchar" MaxLength="50" />
     <Property Name="uid" Type="int" />
+    <Property Name="fid" Type="int" />
   </EntityType>
   <EntityType Name="comment">
     <Key>
@@ -43,6 +46,7 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="dp" Type="text" />
     <Property Name="uid" Type="int" />
+    <Property Name="fid" Type="int" />
   </EntityType>
   <EntityType Name="family">
     <Key>
@@ -60,9 +64,9 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="varchar" MaxLength="50" />
     <Property Name="kg" Type="float" />
-    <Property Name="dt" Type="varchar" MaxLength="50" />
+    <Property Name="dt" Type="datetime" />
     <Property Name="uid" Type="int" />
-    <Property Name="cid" Type="int" />
+    <Property Name="fid" Type="int" />
     <Property Name="caid" Type="int" />
     <Property Name="status" Type="int" />
   </EntityType>

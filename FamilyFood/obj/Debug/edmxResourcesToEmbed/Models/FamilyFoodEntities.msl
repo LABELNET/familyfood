@@ -4,6 +4,8 @@
     <EntitySetMapping Name="card">
       <EntityTypeMapping TypeName="family_foodModel.card">
         <MappingFragment StoreEntitySet="card">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="message" ColumnName="message" />
@@ -14,6 +16,7 @@
     <EntitySetMapping Name="cate">
       <EntityTypeMapping TypeName="family_foodModel.cate">
         <MappingFragment StoreEntitySet="cate">
+          <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="catecontent" ColumnName="catecontent" />
           <ScalarProperty Name="uid" ColumnName="uid" />
@@ -23,23 +26,10 @@
     <EntitySetMapping Name="dapei">
       <EntityTypeMapping TypeName="family_foodModel.dapei">
         <MappingFragment StoreEntitySet="dapei">
+          <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="dp" ColumnName="dp" />
           <ScalarProperty Name="uid" ColumnName="uid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="food">
-      <EntityTypeMapping TypeName="family_foodModel.food">
-        <MappingFragment StoreEntitySet="food">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="kg" ColumnName="kg" />
-          <ScalarProperty Name="dt" ColumnName="dt" />
-          <ScalarProperty Name="uid" ColumnName="uid" />
-          <ScalarProperty Name="cid" ColumnName="cid" />
-          <ScalarProperty Name="caid" ColumnName="caid" />
-          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -85,6 +75,20 @@
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="signature" ColumnName="signature" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="food">
+      <EntityTypeMapping TypeName="family_foodModel.food">
+        <MappingFragment StoreEntitySet="food">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="caid" ColumnName="caid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="kg" ColumnName="kg" />
+          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

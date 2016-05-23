@@ -4,11 +4,11 @@
     <EntitySet Name="card" EntityType="family_foodModel.card" />
     <EntitySet Name="cate" EntityType="family_foodModel.cate" />
     <EntitySet Name="dapei" EntityType="family_foodModel.dapei" />
-    <EntitySet Name="food" EntityType="family_foodModel.food" />
     <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
     <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
     <EntitySet Name="comment" EntityType="family_foodModel.comment" />
     <EntitySet Name="family" EntityType="family_foodModel.family" />
+    <EntitySet Name="food" EntityType="family_foodModel.food" />
   </EntityContainer>
   <EntityType Name="card">
     <Key>
@@ -18,6 +18,8 @@
     <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="message" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="fid" />
+    <Property Type="Int32" Name="uid" />
   </EntityType>
   <EntityType Name="cate">
     <Key>
@@ -26,6 +28,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="catecontent" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="uid" Type="Int32" />
+    <Property Type="Int32" Name="fid" />
   </EntityType>
   <EntityType Name="dapei">
     <Key>
@@ -34,19 +37,7 @@
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="dp" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="uid" Type="Int32" />
-  </EntityType>
-  <EntityType Name="food">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="kg" Type="Double" />
-    <Property Name="dt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="uid" Type="Int32" />
-    <Property Name="cid" Type="Int32" />
-    <Property Name="caid" Type="Int32" />
-    <Property Name="status" Type="Int32" />
+    <Property Type="Int32" Name="fid" />
   </EntityType>
   <EntityType Name="ucard">
     <Key>
@@ -89,5 +80,18 @@
     <Property Type="String" Name="signature" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="food">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="kg" />
+    <Property Type="DateTime" Name="dt" />
+    <Property Type="Int32" Name="uid" />
+    <Property Type="Int32" Name="fid" />
+    <Property Type="Int32" Name="caid" />
+    <Property Type="Int32" Name="status" />
   </EntityType>
 </Schema>
