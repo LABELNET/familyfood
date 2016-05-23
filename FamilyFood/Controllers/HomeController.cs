@@ -62,8 +62,16 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult CateAddRequest(String content)
         {
-
-            return View();
+            if(content.Length>0){
+                user_table user = checkUser();
+                cate ca = new cate();
+                ca.catecontent = content;
+                ca.uid = user.id;
+                ca.fid = user.fid;
+                db.cate.AddObject(ca);
+                db.SaveChanges();
+            }
+            return Redirect("/home/catepage");
         }
 
         /// <summary>
