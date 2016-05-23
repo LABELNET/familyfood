@@ -82,12 +82,12 @@
                                                                  %>
 														    <td>
 
-                                                             <a href="#" class="btn btn-info btn-block">修改</a>
+                                                             <a href="/home/cateupdate?id=<%=c.C.id %>" class="btn btn-info btn-block">修改</a>
 
                                                             </td>
 														    <td>
                                                              
-                                                                <a href="#" class="btn btn-danger btn-block">删除</a>
+                                                                <a href="/home/CateDeleteRequest?id=<%=c.C.id %>" class="btn btn-danger btn-block">删除</a>
 
                                                             </td>
                                                             <%}
