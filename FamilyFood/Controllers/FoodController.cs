@@ -152,6 +152,21 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult FoodDapeiPage()
         {
+
+            user_table user = checkUser();
+            var data = from d in db.dapei
+                       join u in db.user_table
+                       on d.uid equals u.id
+                       where d.fid == user.fid
+                       orderby d.id descending
+                       select new DapeiModel
+                       {
+                           D = d,
+                           U = u
+                       };
+            List<DapeiModel> dapeis = data.ToList<DapeiModel>();
+            ViewData["dapeis"] = dapeis;
+
             return View();
         }
 

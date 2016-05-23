@@ -83,6 +83,7 @@
     <Compile Include="Models\model\CardModel.cs" />
     <Compile Include="Models\model\CateModel.cs" />
     <Compile Include="Models\model\CommentModel.cs" />
+    <Compile Include="Models\model\DapeiModel.cs" />
     <Compile Include="Models\model\FoodModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Shared\index.Master.cs">
