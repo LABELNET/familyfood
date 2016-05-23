@@ -25,6 +25,7 @@
           <Property Name="summary" Type="text" />
           <Property Name="fid" Type="int" />
           <Property Name="uid" Type="int" />
+          <Property Name="faid" Type="int" />
         </EntityType>
         <EntityType Name="cate">
           <Key>
@@ -123,6 +124,7 @@
           <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Type="Int32" Name="fid" />
           <Property Type="Int32" Name="uid" />
+          <Property Type="Int32" Name="faid" />
         </EntityType>
         <EntityType Name="cate">
           <Key>
@@ -206,6 +208,7 @@
           <EntitySetMapping Name="card">
             <EntityTypeMapping TypeName="family_foodModel.card">
               <MappingFragment StoreEntitySet="card">
+                <ScalarProperty Name="faid" ColumnName="faid" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />

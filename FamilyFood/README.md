@@ -45,7 +45,7 @@
 	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）（0,男，1女）,heath（健康）,fid(家庭id)，status(状态：0正常/审核通过，1需要申请加入家庭，2已申请等待审核；3.拒绝了你的加入);
 	 
 	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),fid（家庭id）,caid(分类)，status(状态)（0,正常存储，1消耗完毕）；
-	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效),fid(食物id),uid;
+	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效),fid(食物id),uid,faid(家庭id);
 	  cate : 食物分类    :id,content(分类内容),fid(家庭id),uid;
 	  dapei: 食物搭配    :id,dp(搭配内容),fid,uid;
 

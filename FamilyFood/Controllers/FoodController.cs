@@ -227,8 +227,20 @@ namespace FamilyFood.Controllers
         /// 食物资料卡
         /// </summary>
         /// <returns></returns>
-        public ActionResult FoodIfoList()
+        public ActionResult FoodIfoList(int? p)
         {
+            if (p == null)
+            {
+                p = 1;
+            }
+
+            if (p < 1)
+            {
+                p = 1;
+            }
+            user_
+
+
             return View();
         }
         
@@ -263,6 +275,7 @@ namespace FamilyFood.Controllers
             c.message = message;
             c.fid = fid;
             c.uid = us.id;
+            c.faid = us.fid;
             db.card.AddObject(c);
             db.SaveChanges();
             return Redirect("/food/FoodIfoList");

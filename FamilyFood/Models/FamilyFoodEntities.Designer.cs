@@ -440,6 +440,30 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _uid;
         partial void OnuidChanging(Nullable<global::System.Int32> value);
         partial void OnuidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> faid
+        {
+            get
+            {
+                return _faid;
+            }
+            set
+            {
+                OnfaidChanging(value);
+                ReportPropertyChanging("faid");
+                _faid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("faid");
+                OnfaidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _faid;
+        partial void OnfaidChanging(Nullable<global::System.Int32> value);
+        partial void OnfaidChanged();
 
         #endregion
 
