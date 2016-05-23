@@ -85,12 +85,12 @@
                                                                  %>
 														    <td>
 
-                                                             <a href="/home/cateupdate?id=<%=f.F.id %>" class="btn btn-info btn-block">修改信息</a>
+                                                             <a href="/food/foodupdate?id=<%=f.F.id %>" class="btn btn-info btn-block">修改信息</a>
 
                                                             </td>
 														    <td>
                                                              
-                                                                <a href="/home/CateDeleteRequest?id=<%=f.F.id%>" class="btn btn-danger btn-block">删除信息</a>
+                                                                <a href="/food/FoodDeleteRequest?id=<%=f.F.id%>" class="btn btn-danger btn-block">删除信息</a>
 
                                                             </td>
                                                             <%}

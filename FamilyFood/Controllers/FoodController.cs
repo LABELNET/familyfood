@@ -101,9 +101,50 @@ namespace FamilyFood.Controllers
         /// 食物修改页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult FoodUpdate() {
+        public ActionResult FoodUpdate(int id) {
+
+            user_table user = checkUser();
+            List<cate> cates = (from c in db.cate where c.fid == user.fid select c).ToList<cate>();
+            ViewData["cates"] = cates;
+
+            food fo=db.food.SingleOrDefault<food>(f => f.id == id);
+            ViewData["food"] = fo;
+
             return View();
         }
+        /// <summary>
+        /// 修改食物信息业务
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="kg"></param>
+        /// <param name="cid"></param>
+        /// <returns></returns>
+        public ActionResult FoodUpdateRequest(int id,String name,double kg,int cid)
+        {
+            food fo = db.food.SingleOrDefault<food>(f => f.id == id);
+            fo.name = name;
+            fo.kg = kg;
+            fo.caid = cid;
+            db.SaveChanges();
+
+            return Redirect("/food/foodlistpage?p=1");
+        }
+
+        /// <summary>
+        /// 删除食物信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult FoodDeleteRequest(int id)
+        {
+            food fo = db.food.SingleOrDefault<food>(f => f.id == id);
+            db.DeleteObject(fo);
+            db.SaveChanges();
+
+            return Redirect("/food/foodlistpage?p=1");
+        }
+
 
         /// <summary>
         /// 食物搭配列表页面
