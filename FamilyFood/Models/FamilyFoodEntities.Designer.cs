@@ -392,6 +392,54 @@ namespace FamilyFood.Models
         private global::System.String _summary;
         partial void OnsummaryChanging(global::System.String value);
         partial void OnsummaryChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> uid
+        {
+            get
+            {
+                return _uid;
+            }
+            set
+            {
+                OnuidChanging(value);
+                ReportPropertyChanging("uid");
+                _uid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("uid");
+                OnuidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _uid;
+        partial void OnuidChanging(Nullable<global::System.Int32> value);
+        partial void OnuidChanged();
 
         #endregion
 
@@ -497,6 +545,30 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _uid;
         partial void OnuidChanging(Nullable<global::System.Int32> value);
         partial void OnuidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
 
         #endregion
 
@@ -731,6 +803,30 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _uid;
         partial void OnuidChanging(Nullable<global::System.Int32> value);
         partial void OnuidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
 
         #endregion
 
@@ -1019,30 +1115,6 @@ namespace FamilyFood.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> cid
-        {
-            get
-            {
-                return _cid;
-            }
-            set
-            {
-                OncidChanging(value);
-                ReportPropertyChanging("cid");
-                _cid = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("cid");
-                OncidChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _cid;
-        partial void OncidChanging(Nullable<global::System.Int32> value);
-        partial void OncidChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Int32> caid
         {
             get
@@ -1085,6 +1157,30 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _status;
         partial void OnstatusChanging(Nullable<global::System.Int32> value);
         partial void OnstatusChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
 
         #endregion
 

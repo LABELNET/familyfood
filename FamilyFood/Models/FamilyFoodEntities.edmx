@@ -23,6 +23,8 @@
           <Property Name="description" Type="text" />
           <Property Name="message" Type="text" />
           <Property Name="summary" Type="text" />
+          <Property Name="fid" Type="int" />
+          <Property Name="uid" Type="int" />
         </EntityType>
         <EntityType Name="cate">
           <Key>
@@ -31,6 +33,7 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="catecontent" Type="varchar" MaxLength="50" />
           <Property Name="uid" Type="int" />
+          <Property Name="fid" Type="int" />
         </EntityType>
         <EntityType Name="comment">
           <Key>
@@ -48,6 +51,7 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="dp" Type="text" />
           <Property Name="uid" Type="int" />
+          <Property Name="fid" Type="int" />
         </EntityType>
         <EntityType Name="family">
           <Key>
@@ -65,9 +69,9 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="kg" Type="float" />
-          <Property Name="dt" Type="varchar" MaxLength="50" />
+          <Property Name="dt" Type="datetime" />
           <Property Name="uid" Type="int" />
-          <Property Name="cid" Type="int" />
+          <Property Name="fid" Type="int" />
           <Property Name="caid" Type="int" />
           <Property Name="status" Type="int" />
         </EntityType>
@@ -117,6 +121,8 @@
           <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="message" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="fid" />
+          <Property Type="Int32" Name="uid" />
         </EntityType>
         <EntityType Name="cate">
           <Key>
@@ -125,6 +131,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="catecontent" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="uid" Type="Int32" />
+          <Property Type="Int32" Name="fid" />
         </EntityType>
         <EntityType Name="dapei">
           <Key>
@@ -133,6 +140,7 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="dp" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="uid" Type="Int32" />
+          <Property Type="Int32" Name="fid" />
         </EntityType>
         <EntityType Name="food">
           <Key>
@@ -143,9 +151,9 @@
           <Property Name="kg" Type="Double" />
           <Property Name="dt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="uid" Type="Int32" />
-          <Property Name="cid" Type="Int32" />
           <Property Name="caid" Type="Int32" />
           <Property Name="status" Type="Int32" />
+          <Property Type="Int32" Name="fid" />
         </EntityType>
         <EntityType Name="ucard">
           <Key>
@@ -198,6 +206,8 @@
           <EntitySetMapping Name="card">
             <EntityTypeMapping TypeName="family_foodModel.card">
               <MappingFragment StoreEntitySet="card">
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="message" ColumnName="message" />
@@ -208,6 +218,7 @@
           <EntitySetMapping Name="cate">
             <EntityTypeMapping TypeName="family_foodModel.cate">
               <MappingFragment StoreEntitySet="cate">
+                <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="catecontent" ColumnName="catecontent" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
@@ -217,6 +228,7 @@
           <EntitySetMapping Name="dapei">
             <EntityTypeMapping TypeName="family_foodModel.dapei">
               <MappingFragment StoreEntitySet="dapei">
+                <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="dp" ColumnName="dp" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
@@ -226,12 +238,12 @@
           <EntitySetMapping Name="food">
             <EntityTypeMapping TypeName="family_foodModel.food">
               <MappingFragment StoreEntitySet="food">
+                <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="kg" ColumnName="kg" />
                 <ScalarProperty Name="dt" ColumnName="dt" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
-                <ScalarProperty Name="cid" ColumnName="cid" />
                 <ScalarProperty Name="caid" ColumnName="caid" />
                 <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
@@ -307,7 +319,7 @@
         <EntityTypeShape EntityType="family_foodModel.card" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.cate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.875" PointY="3" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.625" PointY="3" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.625" PointY="3" Height="2.5430916341145826" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="7.125" PointY="3.75" Height="2.3520719401041656" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.comment" Width="1.5" PointX="15.125" PointY="0.5" Height="1.7790128580729174" />

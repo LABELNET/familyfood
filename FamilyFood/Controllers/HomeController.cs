@@ -57,6 +57,16 @@ namespace FamilyFood.Controllers
         }
 
         /// <summary>
+        /// 添加分类请求
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CateAddRequest(String content)
+        {
+
+            return View();
+        }
+
+        /// <summary>
         /// 购买建议-根据食物搭配
         /// </summary>
         /// <returns></returns>
