@@ -14,7 +14,7 @@
 					</div><!--end .section-header -->
 					<div class="section-body">
                       
-                       <h2>主页测试加载</h2>
+                       家庭食物管理小站包括：家庭、用户、食物，建议；
 
 					</div><!--end .section-body -->
 				</section>
