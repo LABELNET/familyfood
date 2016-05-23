@@ -22,9 +22,10 @@ namespace FamilyFood.Controllers
         /// <summary>
         /// 食物列表
         /// </summary>
-        /// <returns></returns>
+        /// <returns>食物信息、分类信息、用户信息</returns>
         public ActionResult FoodListPage()
         {
+
             return View();
         }
 
