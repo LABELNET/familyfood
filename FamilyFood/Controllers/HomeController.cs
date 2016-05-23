@@ -89,6 +89,34 @@ namespace FamilyFood.Controllers
             return Redirect("/home/catepage");
         }
 
+           /// <summary>
+            ///  修改分类页面
+           /// </summary>
+           /// <param name="id">分类id</param>
+           /// <returns></returns>
+        public ActionResult CateUpdate(int id)
+        {
+            cate ca=db.cate.SingleOrDefault<cate>(c=>c.id==id);
+            ViewData["cate"] = ca;
+            return View();
+        }
+
+        /// <summary>
+        /// 修改分类业务实现
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public ActionResult CateUpdateRequest(int id, String content)
+        {
+            if(content.Length>0){
+                cate ca = db.cate.SingleOrDefault<cate>(c => c.id == id);
+                ca.catecontent = content;
+                db.SaveChanges();
+            }
+            return Redirect("/home/catepage");
+        }
+
         /// <summary>
         /// 购买建议-根据食物搭配
         /// </summary>
