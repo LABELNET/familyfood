@@ -238,9 +238,25 @@ namespace FamilyFood.Controllers
             {
                 p = 1;
             }
-            user_
-
-
+            user_table user = checkUser();
+            var cards = from c in db.card
+                        join u in db.user_table
+                        on c.uid equals u.id
+                        join f in db.food
+                        on c.fid equals f.id
+                        where c.faid == user.fid
+                        orderby c.id descending
+                        select new CardModel
+                        {
+                            C = c,
+                            U = u,
+                            F = f
+                        };
+            
+            int count = cards.Count<CardModel>();
+            List<CardModel> cardsModels = cards.Skip((p.Value - 1)*pagesize).Take(pagesize).ToList<CardModel>();
+            ViewData["cardsModels"] = cardsModels;
+            ViewData["count"] = count;
             return View();
         }
         
