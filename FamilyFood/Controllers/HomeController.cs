@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FamilyFood.Models;
+using FamilyFood.Models.model;
 
 namespace FamilyFood.Controllers
 {
@@ -42,7 +43,23 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult CatePage()
         {
+            user_table user=checkUser();
+            List<CateModel> cm = new List<CateModel>();
 
+            //用户信息和分类信息
+            var data = from c in db.cate
+                       join u in db.user_table
+                       on c.uid equals u.id
+                       where c.fid == user.fid
+                       orderby c.id descending
+                       select new CateModel{ 
+                         C=c,
+                         Nick=u.nick,
+                         Phone= u.phone
+                       };
+
+            cm=data.ToList();
+            ViewData["cates"] = cm;
             return View();
         }
 
@@ -52,7 +69,6 @@ namespace FamilyFood.Controllers
         /// <returns></returns>
         public ActionResult CateAdd()
         {
-
             return View();
         }
 
