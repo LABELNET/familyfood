@@ -54,8 +54,7 @@ namespace FamilyFood.Controllers
                        orderby c.id descending
                        select new CateModel{ 
                          C=c,
-                         Nick=u.nick,
-                         Phone= u.phone
+                         U=u
                        };
 
             cm=data.ToList();

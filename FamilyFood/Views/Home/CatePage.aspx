@@ -2,6 +2,22 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+<%
+    FamilyFood.Models.user_table user = null;
+    List<FamilyFood.Models.model.CateModel> cm = null;
+    
+    try
+    {
+        user = (FamilyFood.Models.user_table)Session["user"];
+        cm = (List<FamilyFood.Models.model.CateModel>)ViewData["cates"];
+
+    }
+    catch (Exception e)
+    {
+    }
+    
+     %>
+
      <div id="content">
 
 				<!-- BEGIN BLANK SECTION -->
@@ -43,14 +59,82 @@
 												</thead>
 												<tbody>
 
-													<tr>
-														<td>1</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
+                                                <%
+                                                    if (cm != null)
+                                                    {
+
+                                                        if (cm.Count > 0)
+                                                        {
+
+                                                            for (int i = 0; i < cm.Count; i++)
+                                                            {
+                                                                FamilyFood.Models.model.CateModel c = cm[i];
+                                                     %>
+
+													    <tr>
+														    <td><%=i+1 %></td>
+														    <td><%=c.C.catecontent %></td>
+														    <td><%=c.U.nick %></td>
+														    <td><%=c.U.phone %></td>
+                                                            <%
+                                                                if (c.U.id == user.id)
+                                                                {
+                                                                 %>
+														    <td>
+
+                                                             <a href="#" class="btn btn-info btn-block">修改</a>
+
+                                                            </td>
+														    <td>
+                                                             
+                                                                <a href="#" class="btn btn-danger btn-block">删除</a>
+
+                                                            </td>
+                                                            <%}
+                                                                else
+                                                                {
+                                                                 %>
+
+                                                              <td>
+
+                                                             <a href="#" class="btn btn-info btn-block">没有权限</a>
+
+                                                            </td>
+														    <td>
+                                                             
+                                                                <a href="#" class="btn btn-danger btn-block">没有权限</a>
+
+                                                            </td>
+
+                                                                 <%} %>
+
+													    </tr>
+
+
+                                                    <%}
+                                                        }
+                                                        else
+                                                        {
+                                                        
+                                                        %>
+                                                        <tr>
+														<td colspan=6>暂无数据</td>
+													    </tr>
+                                                        
+                                                        <%
+                                                        
+                                                        }
+
+                                                    }
+                                                    else
+                                                    { %>
+
+                                                    <tr>
+														<td colspan=6>暂无数据</td>
 													</tr>
+
+                                                    <%} %>
+
 													
 												</tbody>
 											</table>

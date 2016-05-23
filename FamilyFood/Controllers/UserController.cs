@@ -342,7 +342,7 @@ namespace FamilyFood.Controllers
         {
 
             user_table user = checkUser();
-            List<user_table> users = (from u in db.user_table where u.fid == user.fid select u).ToList<user_table>();
+            List<user_table> users = (from u in db.user_table where u.fid == user.fid && u.status==0 select u).ToList<user_table>();
             ViewData["users"] = users;//家庭成员列表
             return View();
         }

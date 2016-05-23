@@ -15,20 +15,14 @@ namespace FamilyFood.Models.model
             set { c = value; }
         }
 
-        private String nick;
+        private user_table u;
 
-        public String Nick
+        public user_table U
         {
-            get { return nick; }
-            set { nick = value; }
+            get { return u; }
+            set { u = value; }
         }
-        private String phone;
 
-        public String Phone
-        {
-            get { return phone; }
-            set { phone = value; }
-        }
 
 
 
