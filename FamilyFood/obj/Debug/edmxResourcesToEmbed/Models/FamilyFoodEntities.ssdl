@@ -44,7 +44,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="dp" Type="text" />
     <Property Name="uid" Type="int" />
     <Property Name="fid" Type="int" />

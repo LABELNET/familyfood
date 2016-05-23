@@ -177,9 +177,9 @@ namespace FamilyFood.Controllers
             d.fid = u.fid;
             d.dp = dp;
             db.dapei.AddObject(d);
-            db.SaveChanges();
+            int row= db.SaveChanges();
 
-            return Redirect("/food/FoodDapeiPage");
+            return Json(row, JsonRequestBehavior.AllowGet);
         }
 
      
