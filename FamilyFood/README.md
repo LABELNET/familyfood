@@ -43,10 +43,12 @@
 	```
 	  family :家庭  ： id, name(家庭名称)，description(家庭描述),signature（家庭签名）
 	  user : 用户       ：id,nick(昵称),head（头像）,phone（手机）,pass（密码）,sex（性别）（0,男，1女）,heath（健康）,fid(家庭id)，status(状态：0正常/审核通过，1需要申请加入家庭，2已申请等待审核；3.拒绝了你的加入);
-	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),cid（资料卡id）,caid(分类)，status(状态)（0,正常存储，1消耗完毕）；
-	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效);
-	  cate : 食物分类    :id,content(分类内容),uid;
-	  dapei: 食物搭配    :id,dp(搭配内容),uid;
+	 
+	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),fid（家庭id）,caid(分类)，status(状态)（0,正常存储，1消耗完毕）；
+	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效),fid,uid;
+	  cate : 食物分类    :id,content(分类内容),fid(家庭id),uid;
+	  dapei: 食物搭配    :id,dp(搭配内容),fid,uid;
+
 	  ucard : 用户资料卡 ：id,taste(最喜欢的口味)，fruit(最喜欢的水果)，vegetables(最喜欢的蔬菜),dishes(最喜欢的菜品)，uid（用户id）
 	  comment:留言、备忘 ： id,content,uid(用户id),fid(家庭id)
 
