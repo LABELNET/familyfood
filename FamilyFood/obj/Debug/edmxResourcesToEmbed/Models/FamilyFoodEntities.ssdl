@@ -20,6 +20,7 @@
     <Property Name="summary" Type="text" />
     <Property Name="fid" Type="int" />
     <Property Name="uid" Type="int" />
+    <Property Name="faid" Type="int" />
   </EntityType>
   <EntityType Name="cate">
     <Key>

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="card">
       <EntityTypeMapping TypeName="family_foodModel.card">
         <MappingFragment StoreEntitySet="card">
+          <ScalarProperty Name="faid" ColumnName="faid" />
           <ScalarProperty Name="uid" ColumnName="uid" />
           <ScalarProperty Name="fid" ColumnName="fid" />
           <ScalarProperty Name="id" ColumnName="id" />

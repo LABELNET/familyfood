@@ -20,6 +20,7 @@
     <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Type="Int32" Name="fid" />
     <Property Type="Int32" Name="uid" />
+    <Property Type="Int32" Name="faid" />
   </EntityType>
   <EntityType Name="cate">
     <Key>
