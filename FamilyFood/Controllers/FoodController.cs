@@ -49,8 +49,10 @@ namespace FamilyFood.Controllers
                            C=c,
                            F=f
                        };
+            int count=data.Count<FoodModel>();//总数
             List<FoodModel> foods = data.Skip((p.Value-1)*pagesize).Take(pagesize).ToList<FoodModel>();
             ViewData["foods"] = foods;
+            ViewData["count"] = count;
             return View();
         }
 

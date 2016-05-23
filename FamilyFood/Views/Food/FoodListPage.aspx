@@ -4,10 +4,12 @@
 <%
     FamilyFood.Models.user_table user = null;
     List<FamilyFood.Models.model.FoodModel> foods = null;
+    int count = 0;
     try
     {
         user = (FamilyFood.Models.user_table)Session["user"];
         foods =(List<FamilyFood.Models.model.FoodModel>)ViewData["foods"];
+        count = (int)ViewData["count"];
     }
     catch (Exception e)
     {
@@ -140,9 +142,37 @@
 												</tbody>
 											</table>
 										</div><!--end .table-responsive -->
+
+                                        
+
+
 									</div><!--end .card-body -->
 								</div><!--end .card -->
-							</div><!--end .col -->
+
+                                <%
+                                    if (count > 10)
+                                    {
+                                    
+                                     %>
+
+                                <ul class="pagination pagination-lg" style="float:right;">
+									 <%
+                                        for (int i = 0; i <= count%10; i++)
+                                        { 
+                                         %>
+
+                                          <li><a href="/food/foodlistpage?p=<%=i+1 %>"><%=i+1 %></a></li>
+
+
+                                         <%} %> 
+                                        
+								</ul>
+                                <%
+                                    }
+                                     %>
+
+							</div><!--end .col 
+
 						</div>
 
 					</div><!--end .section-body -->
