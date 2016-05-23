@@ -1599,6 +1599,7 @@
     <Content Include="Views\Food\FoodDapeiPageAdd.aspx" />
     <Content Include="Views\Food\FoodIfoAdd.aspx" />
     <Content Include="Views\Food\FoodIfoList.aspx" />
+    <Content Include="Views\Food\FoodIfoUpdate.aspx" />
     <Content Include="Views\Food\FoodListPage.aspx" />
     <Content Include="Views\Food\FoodUpdate.aspx" />
     <Content Include="Views\Food\Index.aspx" />
