@@ -78,7 +78,7 @@
                                                                  %>
 														    <td>
                                                              
-                                                                <a href="/home/CateDeleteRequest?id=<%=c.D.id %>" class="btn btn-info btn-block">删除重新录入</a>
+                                                                <a href="/food/FoodDapeiPageDeleteRequest?id=<%=c.D.id %>" class="btn btn-info btn-block">删除重新录入</a>
 
                                                             </td>
                                                             <%}

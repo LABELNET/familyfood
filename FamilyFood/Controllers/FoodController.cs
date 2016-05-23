@@ -166,7 +166,6 @@ namespace FamilyFood.Controllers
                        };
             List<DapeiModel> dapeis = data.ToList<DapeiModel>();
             ViewData["dapeis"] = dapeis;
-
             return View();
         }
 
