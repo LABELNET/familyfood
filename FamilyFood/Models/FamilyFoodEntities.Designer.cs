@@ -116,22 +116,6 @@ namespace FamilyFood.Models
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<food> food
-        {
-            get
-            {
-                if ((_food == null))
-                {
-                    _food = base.CreateObjectSet<food>("food");
-                }
-                return _food;
-            }
-        }
-        private ObjectSet<food> _food;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<ucard> ucard
         {
             get
@@ -192,6 +176,22 @@ namespace FamilyFood.Models
             }
         }
         private ObjectSet<family> _family;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<food> food
+        {
+            get
+            {
+                if ((_food == null))
+                {
+                    _food = base.CreateObjectSet<food>("food");
+                }
+                return _food;
+            }
+        }
+        private ObjectSet<food> _food;
 
         #endregion
 
@@ -219,14 +219,6 @@ namespace FamilyFood.Models
         public void AddTodapei(dapei dapei)
         {
             base.AddObject("dapei", dapei);
-        }
-    
-        /// <summary>
-        /// 用于向 food EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddTofood(food food)
-        {
-            base.AddObject("food", food);
         }
     
         /// <summary>
@@ -259,6 +251,14 @@ namespace FamilyFood.Models
         public void AddTofamily(family family)
         {
             base.AddObject("family", family);
+        }
+    
+        /// <summary>
+        /// 用于向 food EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTofood(food food)
+        {
+            base.AddObject("food", food);
         }
 
         #endregion
@@ -1067,7 +1067,7 @@ namespace FamilyFood.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String dt
+        public Nullable<global::System.DateTime> dt
         {
             get
             {
@@ -1077,13 +1077,13 @@ namespace FamilyFood.Models
             {
                 OndtChanging(value);
                 ReportPropertyChanging("dt");
-                _dt = StructuralObject.SetValidValue(value, true);
+                _dt = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("dt");
                 OndtChanged();
             }
         }
-        private global::System.String _dt;
-        partial void OndtChanging(global::System.String value);
+        private Nullable<global::System.DateTime> _dt;
+        partial void OndtChanging(Nullable<global::System.DateTime> value);
         partial void OndtChanged();
     
         /// <summary>
@@ -1109,6 +1109,30 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _uid;
         partial void OnuidChanging(Nullable<global::System.Int32> value);
         partial void OnuidChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fid
+        {
+            get
+            {
+                return _fid;
+            }
+            set
+            {
+                OnfidChanging(value);
+                ReportPropertyChanging("fid");
+                _fid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fid");
+                OnfidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fid;
+        partial void OnfidChanging(Nullable<global::System.Int32> value);
+        partial void OnfidChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -1157,30 +1181,6 @@ namespace FamilyFood.Models
         private Nullable<global::System.Int32> _status;
         partial void OnstatusChanging(Nullable<global::System.Int32> value);
         partial void OnstatusChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> fid
-        {
-            get
-            {
-                return _fid;
-            }
-            set
-            {
-                OnfidChanging(value);
-                ReportPropertyChanging("fid");
-                _fid = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fid");
-                OnfidChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _fid;
-        partial void OnfidChanging(Nullable<global::System.Int32> value);
-        partial void OnfidChanged();
 
         #endregion
 

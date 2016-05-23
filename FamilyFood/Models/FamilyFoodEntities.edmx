@@ -107,11 +107,11 @@
           <EntitySet Name="card" EntityType="family_foodModel.card" />
           <EntitySet Name="cate" EntityType="family_foodModel.cate" />
           <EntitySet Name="dapei" EntityType="family_foodModel.dapei" />
-          <EntitySet Name="food" EntityType="family_foodModel.food" />
           <EntitySet Name="ucard" EntityType="family_foodModel.ucard" />
           <EntitySet Name="user_table" EntityType="family_foodModel.user_table" />
           <EntitySet Name="comment" EntityType="family_foodModel.comment" />
           <EntitySet Name="family" EntityType="family_foodModel.family" />
+          <EntitySet Name="food" EntityType="family_foodModel.food" />
         </EntityContainer>
         <EntityType Name="card">
           <Key>
@@ -140,19 +140,6 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="dp" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="uid" Type="Int32" />
-          <Property Type="Int32" Name="fid" />
-        </EntityType>
-        <EntityType Name="food">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="kg" Type="Double" />
-          <Property Name="dt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="uid" Type="Int32" />
-          <Property Name="caid" Type="Int32" />
-          <Property Name="status" Type="Int32" />
           <Property Type="Int32" Name="fid" />
         </EntityType>
         <EntityType Name="ucard">
@@ -197,6 +184,19 @@
           <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="kg" />
+          <Property Type="DateTime" Name="dt" />
+          <Property Type="Int32" Name="uid" />
+          <Property Type="Int32" Name="fid" />
+          <Property Type="Int32" Name="caid" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -232,20 +232,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="dp" ColumnName="dp" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="food">
-            <EntityTypeMapping TypeName="family_foodModel.food">
-              <MappingFragment StoreEntitySet="food">
-                <ScalarProperty Name="fid" ColumnName="fid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="kg" ColumnName="kg" />
-                <ScalarProperty Name="dt" ColumnName="dt" />
-                <ScalarProperty Name="uid" ColumnName="uid" />
-                <ScalarProperty Name="caid" ColumnName="caid" />
-                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -295,6 +281,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="food">
+            <EntityTypeMapping TypeName="family_foodModel.food">
+              <MappingFragment StoreEntitySet="food">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="caid" ColumnName="caid" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="kg" ColumnName="kg" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -319,11 +319,11 @@
         <EntityTypeShape EntityType="family_foodModel.card" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.cate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.875" PointY="3" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="2.625" PointY="3" Height="2.5430916341145826" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="7.125" PointY="3.75" Height="2.3520719401041656" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.comment" Width="1.5" PointX="15.125" PointY="0.5" Height="1.7790128580729174" />
         <EntityTypeShape EntityType="family_foodModel.family" Width="1.5" PointX="4.625" PointY="3.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="0.75" PointY="5.75" Height="2.5430916341145817" />
       </Diagram>
     </Diagrams>
   </Designer>
