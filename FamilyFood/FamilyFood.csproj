@@ -108,6 +108,7 @@
     <Content Include="assets\css\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\style1.css" />
     <Content Include="assets\css\supersized.css" />
     <Content Include="assets\css\theme-1\bootstrap.css" />
     <Content Include="assets\css\theme-1\font-awesome.css" />
@@ -552,7 +553,9 @@
     <Content Include="assets\js\core\source\AppNavSearch.js" />
     <Content Include="assets\js\core\source\AppOffcanvas.js" />
     <Content Include="assets\js\core\source\AppVendor.js" />
+    <Content Include="assets\js\index.js" />
     <Content Include="assets\js\jquery-1.8.2.min.js" />
+    <Content Include="assets\js\jquery-1.8.3.min.js" />
     <Content Include="assets\js\libs\autosize\jquery.autosize.js" />
     <Content Include="assets\js\libs\autosize\jquery.autosize.min.js" />
     <Content Include="assets\js\libs\autosize\license.txt" />
@@ -1585,9 +1588,11 @@
     <Content Include="assets\js\libs\wizard\jquery.bootstrap.wizard.js" />
     <Content Include="assets\js\libs\wizard\jquery.bootstrap.wizard.min.js" />
     <Content Include="assets\js\libs\wizard\MIT-LICENSE.txt" />
+    <Content Include="assets\js\prefixfree.min.js" />
     <Content Include="assets\js\scripts.js" />
     <Content Include="assets\js\supersized-init.js" />
     <Content Include="assets\js\supersized.3.2.7.min.js" />
+    <Content Include="assets\js\zzsc.js" />
     <Content Include="assets\less\libs\bootstrap-colorpicker\modified-log.txt" />
     <Content Include="assets\less\libs\DataTables\license.txt" />
     <Content Include="assets\less\libs\fullcalendar\license.txt" />

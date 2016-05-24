@@ -48,8 +48,10 @@
 													<tr>
 														<th>#</th>
 														<th>食物名称</th>
-                                                        <th>重量</th>
                                                         <th>食物分类</th>
+                                                        <th>总重量</th>
+                                                        <th>以消耗</th>
+                                                        <th>剩余</th>
 														<th>录入成员</th>
 														<th>联系方式</th>
                                                         <th>录入时间</th>
@@ -74,8 +76,10 @@
 													    <tr>
 														    <td><%=i+1 %></td>
 														    <td><%=f.F.name %></td>
+                                                              <td><%=f.C.catecontent %></td>
 														    <td><%=f.F.kg %> kg</td>
-														    <td><%=f.C.catecontent %></td>
+                                                            <td>0 kg</td>
+                                                            <td><%=f.F.kg %> kg</td>
                                                              <td><%=f.U.nick %></td>
                                                               <td><%=f.U.phone %></td>
                                                                <td><%=f.F.dt %></td>

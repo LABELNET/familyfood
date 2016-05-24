@@ -139,7 +139,7 @@ namespace FamilyFood.Controllers
         public ActionResult FoodDeleteRequest(int id)
         {
             food fo = db.food.SingleOrDefault<food>(f => f.id == id);
-            db.DeleteObject(fo);
+            fo.status = 1;
             db.SaveChanges();
 
             return Redirect("/food/foodlistpage?p=1");

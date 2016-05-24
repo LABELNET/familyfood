@@ -146,28 +146,28 @@
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">食物总量 <strong>30kg</strong></span>
-											<strong class="pull-right">93%</strong>
+											<span class="text-light">剩余食物 <strong>180kg</strong></span>
+											<strong class="pull-right">90%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 90%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">今天消耗了 <strong>10kg</strong></span>
-											<strong class="pull-right">30%</strong>
+											<span class="text-light">食物总量 <strong>201kg</strong></span>
+											<strong class="pull-right">100%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">昨天消耗了 <strong>5kg</strong></span>
-											<strong class="pull-right">74%</strong>
+											<span class="text-light">消耗了 <strong>21kg</strong></span>
+											<strong class="pull-right">10%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 10%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 							</ul><!--end .dropdown-menu -->

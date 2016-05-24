@@ -1,13 +1,20 @@
 ﻿# 家庭食物管理小站
 
 
+#待完成页面
+ * 主界面
+ * 统计页面
+ * 页面header 新鲜度提醒、消息页面（家庭成员申请已实现）
+ * 
+
+
 #待完成
  * 食物搭配录入(ok)
- * 购买建议 
- * 主页实现 ： 购买提醒，食物统计，小站介绍，时间显示，新鲜度提醒显示
- * 食物新鲜度提醒
- * 食物总量统计 ： 
- * 搜索-
+ * 购买建议 (no)
+ * 主页实现 ： 购买提醒，食物统计，小站介绍，时间显示，新鲜度提醒显示，选菜
+ * 食物新鲜度提醒 ：大于3天：不新鲜；超过7天：不能吃了；
+ * 食物总量统计 ： 食物总量，已销毁多少，剩余多少，一周录入了多少上个月消耗了多少
+ * 搜索-食物资料搜索
 
 
 # 2016.05.23
@@ -55,11 +62,13 @@
 	 
 	  food : 食物       ：id,name（姓名）,kg（重量）,dt(时间),uid(用户id),fid（家庭id）,caid(分类)，status(状态)（0,正常存储，1消耗完毕）；
 	  card : 食物资料卡  :id,description(描述),message(食材介绍),summary(功效),fid(食物id),uid,faid(家庭id);
-	  cate : 食物分类    :id,content(分类内容),fid(家庭id),uid;
-	  dapei: 食物搭配    :id,dp(搭配内容),fid,uid;
+	  cate : 食物分类    :id,content(分类内容),fid(家庭id),uid(用户id);
+	  dapei: 食物搭配    :id,dp(搭配内容),fid（家庭id）,uid(用户id);
 
 	  ucard : 用户资料卡 ：id,taste(最喜欢的口味)，fruit(最喜欢的水果)，vegetables(最喜欢的蔬菜),dishes(最喜欢的菜品)，uid（用户id）
 	  comment:留言、备忘 ： id,content,uid(用户id),fid(家庭id)
+
+	  consume : 用户消耗表 ：id，fid(食物id),kg(消耗的重量),dt(时间)，uid(用户)，faid(家庭id);
 
 	```
  * 系统架构： asp.net mvc 2.0 ; sqlserver 2005 ;
