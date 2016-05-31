@@ -4,6 +4,7 @@
     <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="comment" EntityType="family_foodModel.Store.comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="consume" EntityType="family_foodModel.Store.consume" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="family" EntityType="family_foodModel.Store.family" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" Schema="dbo" />
@@ -39,6 +40,17 @@
     <Property Name="comment" Type="text" />
     <Property Name="uid" Type="int" />
     <Property Name="fid" Type="int" />
+  </EntityType>
+  <EntityType Name="consume">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fid" Type="int" />
+    <Property Name="kg" Type="float" />
+    <Property Name="dt" Type="datetime" />
+    <Property Name="uid" Type="int" />
+    <Property Name="faid" Type="int" />
   </EntityType>
   <EntityType Name="dapei">
     <Key>

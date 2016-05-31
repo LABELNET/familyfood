@@ -35,6 +35,15 @@ namespace FamilyFood.Models.model
             set { f = value; }
         }
 
+        private double eatCount;
+
+        public double EatCount
+        {
+            get { return eatCount; }
+            set { eatCount = value; }
+        }
+
+    
         
 
     }

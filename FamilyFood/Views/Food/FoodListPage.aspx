@@ -78,8 +78,8 @@
 														    <td><%=f.F.name %></td>
                                                               <td><%=f.C.catecontent %></td>
 														    <td><%=f.F.kg %> kg</td>
-                                                            <td>0 kg</td>
-                                                            <td><%=f.F.kg %> kg</td>
+                                                            <td><%=f.EatCount %> kg</td>
+                                                            <td><%=f.F.kg.Value-f.EatCount %> kg</td>
                                                              <td><%=f.U.nick %></td>
                                                               <td><%=f.U.phone %></td>
                                                                <td><%=f.F.dt %></td>

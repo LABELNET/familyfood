@@ -94,5 +94,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="consume">
+      <EntityTypeMapping TypeName="family_foodModel.consume">
+        <MappingFragment StoreEntitySet="consume">
+          <ScalarProperty Name="faid" ColumnName="faid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="kg" ColumnName="kg" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

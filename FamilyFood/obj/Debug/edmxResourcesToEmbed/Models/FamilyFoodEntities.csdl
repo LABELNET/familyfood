@@ -9,6 +9,7 @@
     <EntitySet Name="comment" EntityType="family_foodModel.comment" />
     <EntitySet Name="family" EntityType="family_foodModel.family" />
     <EntitySet Name="food" EntityType="family_foodModel.food" />
+    <EntitySet Name="consume" EntityType="family_foodModel.consume" />
   </EntityContainer>
   <EntityType Name="card">
     <Key>
@@ -94,5 +95,16 @@
     <Property Type="Int32" Name="fid" />
     <Property Type="Int32" Name="caid" />
     <Property Type="Int32" Name="status" />
+  </EntityType>
+  <EntityType Name="consume">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="fid" />
+    <Property Type="Double" Name="kg" />
+    <Property Type="DateTime" Name="dt" />
+    <Property Type="Int32" Name="uid" />
+    <Property Type="Int32" Name="faid" />
   </EntityType>
 </Schema>

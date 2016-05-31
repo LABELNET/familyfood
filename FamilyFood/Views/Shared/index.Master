@@ -6,11 +6,72 @@
      FamilyFood.Models.user_table user=null;
      List<FamilyFood.Models.user_table> users = null;
      //后面还有 食物总量，消耗总量 ，剩余总量
+     double allCount = 0.0,eatCount=0.0,shengCount=0.0,diuCount=0.0;
      //食物新鲜度，查询
+     List<FamilyFood.Models.food> foods = null;
+     //全部的消息数
+     int countNotify = 0;
     try
     {
         user = (FamilyFood.Models.user_table)Session["user"];
-        users=(from u in db.user_table where u.fid==user.fid && u.status==2 select u).ToList<FamilyFood.Models.user_table>(); 
+        
+        //查询家庭总食物
+        var query = (from f in db.food where f.fid == user.fid select f.kg).Sum();
+        if (query != null)
+        {
+            allCount = query.Value;
+        }
+        else
+        {
+            allCount = 0.0;
+        }
+
+        // 消耗的家庭总食物
+        var queryEat = (from c in db.consume where c.faid == user.fid select c.kg).Sum();
+        if (queryEat != null)
+        {
+            eatCount = queryEat.Value;
+        }
+        else
+        {
+            eatCount = 0.0;
+        }
+
+        // 剩余的家庭食物总量
+        var querySheng = (from f in db.food where f.fid == user.fid && f.status == 0 select f.kg).Sum();
+        if (querySheng != null)
+        {
+            shengCount = querySheng.Value;
+        }
+        else
+        {
+            shengCount = 0.0;
+        }
+
+        var queryDiu = (from f in db.food where f.fid == user.fid && f.status == 1 select f.kg).Sum();
+        if (queryDiu != null)
+        {
+            diuCount = queryDiu.Value;
+        }
+        else
+        {
+            diuCount = 0.0;
+        }
+        
+
+        //不新鲜食物
+        foods = db.food.Where(f => System.Data.Objects.SqlClient.SqlFunctions.DateDiff("week", f.dt, DateTime.Now) > 0 && f.fid == user.fid && f.status == 0).Select(f => f).ToList<FamilyFood.Models.food>();
+        
+        //申请人
+        users=(from u in db.user_table where u.fid==user.fid && u.status==2 select u).ToList<FamilyFood.Models.user_table>();
+
+        if (users != null) {
+            countNotify = users.Count;
+        }
+
+        if (foods != null) {
+            countNotify += foods.Count;
+        }
        
             if (user == null)
             {
@@ -92,26 +153,38 @@
 					<ul class="header-nav header-nav-options">
 						<li>
 							<!-- Search form -->
-							<form class="navbar-search" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">
-								</div>
-								<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
-							</form>
+						
 						</li>
 						<li class="dropdown hidden-xs">
 							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
-								<i class="fa fa-bell"></i><sup class="badge style-danger">4</sup>
+                              <%
+                                  if (countNotify > 0)
+                                  {
+                                   %>
+								<i class="fa fa-bell"></i><sup class="badge style-danger"><%=countNotify%></sup>
+                                <%} %>
 							</a>
 							<ul class="dropdown-menu animation-expand">
 								<li class="dropdown-header">消息通知</li>
+                                <%
+                                    
+                                    if (foods != null)
+                                    {
+                                        foreach (FamilyFood.Models.food f in foods)
+                                        {
+                                    
+                                     %>
 								<li>
 									<a class="alert alert-callout alert-warning" href="/home/MessagePage">
-										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
 										<strong>食物新鲜度提醒</strong><br/>
-										<small>你有些食物再不吃就坏了</small>
+										<small><%=f.name %> 于 <%=f.dt %> 购买，已经不新鲜了哦</small>
 									</a>
 								</li>
+
+                                <%}
+                                    } %>
+
+
                                 <%
                                     if (users != null)
                                     {
@@ -146,16 +219,16 @@
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">剩余食物 <strong>180kg</strong></span>
-											<strong class="pull-right">90%</strong>
+											<span class="text-light">剩余食物 <strong><%=shengCount %> kg</strong></span>
+											<strong class="pull-right"><%=Math.Round((shengCount / allCount) * 100, 1)%>%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 90%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: <%=(shengCount/allCount)*100 %>%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">食物总量 <strong>201kg</strong></span>
+											<span class="text-light">食物总量 <strong><%=allCount %> kg</strong></span>
 											<strong class="pull-right">100%</strong>
 										</div>
 										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 100%"></div></div>
@@ -164,10 +237,19 @@
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">消耗了 <strong>21kg</strong></span>
-											<strong class="pull-right">10%</strong>
+											<span class="text-light">消耗了 <strong><%=eatCount %> kg</strong></span>
+											<strong class="pull-right"><%=Math.Round((eatCount / allCount) * 100, 1)%>%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 10%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: <%=(eatCount / allCount) * 100%>%"></div></div>
+									</a>
+								</li><!--end .dropdown-progress -->
+                                <li class="dropdown-progress">
+									<a href="javascript:void(0);">
+										<div class="dropdown-label">
+											<span class="text-light">丢弃了 <strong><%=diuCount %> kg</strong></span>
+											<strong class="pull-right"><%=Math.Round((diuCount / allCount) * 100,1)%>%</strong>
+										</div>
+										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: <%=(shengCount/allCount)*100 %>%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 							</ul><!--end .dropdown-menu -->
@@ -211,11 +293,7 @@
 						</li><!--end .dropdown -->
 					</ul><!--end .header-nav-profile -->
 					<ul class="header-nav header-nav-toggle">
-						<li>
-							<a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
-								<i class="fa fa-ellipsis-v"></i>
-							</a>
-						</li>
+						
 					</ul><!--end .header-nav-toggle -->
 				</div><!--end #header-navbar-collapse -->
 			</div>
@@ -317,15 +395,11 @@
 					
 
                       <!-- BEGIN PAGES -->
-						<li class="gui-folder">
-							<a>
+						<li>
+							<a href="/home/BuyAdviceByDaPei">
 								<div class="gui-icon"><i class="md md-computer"></i></div>
 								<span class="title">购买建议</span>
 							</a>
-							 <ul>
-								    <li><a href="/home/BuyAdviceByDaPei" ><span class="title">根据食物搭配</span></a></li>
-								    <li><a href="/home/BuyAdviceByHeath" ><span class="title">根据身体健康</span></a></li>
-							 </ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 						<!-- END FORMS -->
 
@@ -379,59 +453,6 @@
 				</div><!--end .menubar-scroll-panel-->
 			</div><!--end #menubar-->
 			<!-- END MENUBAR -->
-
-			<!-- BEGIN OFFCANVAS RIGHT -->
-			<div class="offcanvas">
-
-				<!-- BEGIN OFFCANVAS SEARCH -->
-				<div id="offcanvas-search" class="offcanvas-pane width-8">
-					<div class="offcanvas-head">
-						<header class="text-primary">建议购买菜品</header>
-						<div class="offcanvas-tools">
-							<a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
-								<i class="md md-close"></i>
-							</a>
-						</div>
-					</div>
-					<div class="offcanvas-body no-padding">
-						
-                        <ul class="list ">
-							<li class="tile divider-full-bleed">
-								<div class="tile-content">
-									<div class="tile-text"><strong>蔬菜</strong></div>
-								</div>
-							</li>
-							<li class="tile">
-								<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
-									<div class="tile-icon">
-										<img src="../../assets/img/avatar4.jpg?1404026791" alt="" />
-									</div>
-									<div class="tile-text">
-										黄瓜
-										<small>0.5kg</small>
-									</div>
-								</a>
-							</li>
-							<li class="tile">
-								<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
-									<div class="tile-icon">
-										<img src="../../assets/img/avatar9.jpg?1404026744" alt="" />
-									</div>
-									<div class="tile-text">
-										西红柿
-										<small>10kg</small>
-									</div>
-								</a>
-							</li>
-							
-                            
-						</ul>
-					</div><!--end .offcanvas-body -->
-				</div><!--end .offcanvas-pane -->
-				<!-- END OFFCANVAS SEARCH -->
-
-			</div><!--end .offcanvas-->
-			<!-- END OFFCANVAS RIGHT -->
 
 		</div><!--end #base-->
 		<!-- END BASE -->

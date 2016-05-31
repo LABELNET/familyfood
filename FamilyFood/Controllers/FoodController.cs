@@ -51,6 +51,28 @@ namespace FamilyFood.Controllers
                        };
             int count=data.Count<FoodModel>();//总数
             List<FoodModel> foods = data.Skip((p.Value-1)*pagesize).Take(pagesize).ToList<FoodModel>();
+            foreach (FoodModel fm in foods) 
+            {
+                var eatCount = db.consume.Where(c => c.fid == fm.F.id).Select(c => c.kg).Sum();
+                if (eatCount != null)
+                {
+                    if(eatCount.Value>=fm.F.kg.Value)
+                    {
+                        fm.EatCount = fm.F.kg.Value;
+                        food fo= db.food.SingleOrDefault<food>(f=>f.id==fm.F.id);
+                        fo.status = 2;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        fm.EatCount = eatCount.Value;
+                    }
+                }
+                else 
+                {
+                    fm.EatCount = 0.0;
+                }
+            }
             ViewData["foods"] = foods;
             ViewData["count"] = count;
             return View();

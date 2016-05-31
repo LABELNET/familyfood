@@ -1611,7 +1611,6 @@
     <Content Include="Views\Food\Index.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\BuyAdviceByDaPei.aspx" />
-    <Content Include="Views\Home\BuyAdviceByHeath.aspx" />
     <Content Include="Views\Home\CateAdd.aspx" />
     <Content Include="Views\Home\CatePage.aspx" />
     <Content Include="Views\Home\CateUpdate.aspx" />

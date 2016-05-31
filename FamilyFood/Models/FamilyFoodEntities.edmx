@@ -9,6 +9,7 @@
           <EntitySet Name="card" EntityType="family_foodModel.Store.card" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cate" EntityType="family_foodModel.Store.cate" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="comment" EntityType="family_foodModel.Store.comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="consume" EntityType="family_foodModel.Store.consume" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="dapei" EntityType="family_foodModel.Store.dapei" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="family" EntityType="family_foodModel.Store.family" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="food" EntityType="family_foodModel.Store.food" store:Type="Tables" Schema="dbo" />
@@ -44,6 +45,17 @@
           <Property Name="comment" Type="text" />
           <Property Name="uid" Type="int" />
           <Property Name="fid" Type="int" />
+        </EntityType>
+        <EntityType Name="consume">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fid" Type="int" />
+          <Property Name="kg" Type="float" />
+          <Property Name="dt" Type="datetime" />
+          <Property Name="uid" Type="int" />
+          <Property Name="faid" Type="int" />
         </EntityType>
         <EntityType Name="dapei">
           <Key>
@@ -113,6 +125,7 @@
           <EntitySet Name="comment" EntityType="family_foodModel.comment" />
           <EntitySet Name="family" EntityType="family_foodModel.family" />
           <EntitySet Name="food" EntityType="family_foodModel.food" />
+          <EntitySet Name="consume" EntityType="family_foodModel.consume" />
         </EntityContainer>
         <EntityType Name="card">
           <Key>
@@ -198,6 +211,17 @@
           <Property Type="Int32" Name="fid" />
           <Property Type="Int32" Name="caid" />
           <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="consume">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="fid" />
+          <Property Type="Double" Name="kg" />
+          <Property Type="DateTime" Name="dt" />
+          <Property Type="Int32" Name="uid" />
+          <Property Type="Int32" Name="faid" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -298,6 +322,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="consume">
+            <EntityTypeMapping TypeName="family_foodModel.consume">
+              <MappingFragment StoreEntitySet="consume">
+                <ScalarProperty Name="faid" ColumnName="faid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="kg" ColumnName="kg" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -321,12 +357,13 @@
       <Diagram Name="FamilyFoodEntities">
         <EntityTypeShape EntityType="family_foodModel.card" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.cate" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.875" PointY="3" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.dapei" Width="1.5" PointX="0.625" PointY="3.5" Height="1.7790128580729165" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.ucard" Width="1.5" PointX="4.75" PointY="0.75" Height="2.1610522460937496" IsExpanded="true" />
-        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="7.125" PointY="3.75" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="family_foodModel.user_table" Width="1.5" PointX="5" PointY="3.5" Height="2.5430916341145826" IsExpanded="true" />
         <EntityTypeShape EntityType="family_foodModel.comment" Width="1.5" PointX="15.125" PointY="0.5" Height="1.7790128580729174" />
-        <EntityTypeShape EntityType="family_foodModel.family" Width="1.5" PointX="4.625" PointY="3.75" Height="1.7790128580729174" />
-        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="0.75" PointY="5.75" Height="2.5430916341145817" />
+        <EntityTypeShape EntityType="family_foodModel.family" Width="1.5" PointX="2.875" PointY="3.5" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="family_foodModel.food" Width="1.5" PointX="7.375" PointY="3.5" Height="2.5430916341145817" />
+        <EntityTypeShape EntityType="family_foodModel.consume" Width="1.5" PointX="7.375" PointY="0.75" Height="2.1610522460937496" />
       </Diagram>
     </Diagrams>
   </Designer>

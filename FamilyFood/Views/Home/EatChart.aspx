@@ -2,6 +2,24 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+<%
+    FamilyFood.Models.user_table user = null;
+    double allCount=0.0,eatCount=0.0,shengCount=0.0,diuCount=0.0;
+    try
+    {
+        allCount = (double)ViewData["AllFoodCount"];
+        eatCount = (double)ViewData["AllEatCount"];
+        shengCount =(double)ViewData["AllShengCount"];
+        diuCount =(double)ViewData["AllDiuCount"];
+        user = (FamilyFood.Models.user_table)Session["user"];
+
+    }
+    catch (Exception e)
+    {
+    } 
+    
+     %>
+
    <div id="content">
 
 				<!-- BEGIN BLANK SECTION -->
@@ -22,9 +40,13 @@
 								<div class="card">
 									<div class="card-body no-padding">
 										<div class="alert alert-callout alert-info no-margin">
-											<strong class="pull-right text-success text-lg">0.38% <i class="md md-trending-up"></i></strong>
-											<strong class="text-xl">200kg</strong><br>
+											<strong class="text-xl"><%=allCount%>kg</strong><br>
 											<span class="opacity-50">食物总量</span>
+                                            <div class="stick-bottom-left-right">
+												<div class="progress progress-hairline no-margin">
+                                                   <div class="progress-bar progress-bar-success" style="width:100%"></div>
+												</div>
+											</div>
 										</div>
 									</div><!--end .card-body -->
 								</div><!--end .card -->
@@ -36,11 +58,12 @@
 								<div class="card">
 									<div class="card-body no-padding">
 										<div class="alert alert-callout alert-warning no-margin">
-											<strong class="pull-right text-warning text-lg">0.01% <i class="md md-swap-vert"></i></strong>
-											<strong class="text-xl">23kg</strong><br>
+											<strong class="text-xl"><%=eatCount%>kg</strong><br>
 											<span class="opacity-50">消耗的食物总量</span>
-											<div class="stick-bottom-right">
-												<div class="height-1 sparkline-visits" data-bar-color="#e5e6e6"><canvas width="228" height="40" style="display: inline-block; width: 228px; height: 40px; vertical-align: top;"></canvas></div>
+								            <div class="stick-bottom-left-right">
+												<div class="progress progress-hairline no-margin">
+                                                   <div class="progress-bar progress-bar-info" style="width:<%=(eatCount/allCount)*100%>%"></div>
+												</div>
 											</div>
 										</div>
 									</div><!--end .card-body -->
@@ -53,12 +76,11 @@
 								<div class="card">
 									<div class="card-body no-padding">
 										<div class="alert alert-callout alert-danger no-margin">
-											<strong class="pull-right text-danger text-lg">0.18% <i class="md md-trending-down"></i></strong>
-											<strong class="text-xl">179kg</strong><br>
+											<strong class="text-xl"><%=shengCount%>kg</strong><br>
 											<span class="opacity-50">剩余的食物总量</span>
 											<div class="stick-bottom-left-right">
 												<div class="progress progress-hairline no-margin">
-													<div class="progress-bar progress-bar-danger" style="width:43%"></div>
+                                                   <div class="progress-bar progress-bar-danger" style="width:<%=(shengCount/allCount)*100%>%"></div>
 												</div>
 											</div>
 										</div>
@@ -72,8 +94,13 @@
 								<div class="card">
 									<div class="card-body no-padding">
 										<div class="alert alert-callout alert-info no-margin">
-											<strong class="pull-right text-info text-lg">当前时间 </strong>
-											<strong class="text-xl"><div id="time"> </div></strong><br>
+											<strong class="text-xl"><%=diuCount%>kg</strong><br>
+											<span class="opacity-50">丢弃的食物总量</span>
+											<div class="stick-bottom-left-right">
+												<div class="progress progress-hairline no-margin">
+                                                   <div class="progress-bar progress-bar-danger" style="width:<%=(diuCount/allCount)*100%>%"></div>
+												</div>
+											</div>
 										</div>
 									</div><!--end .card-body -->
 								</div><!--end .card -->
@@ -88,7 +115,7 @@
 												<header>统计总结报告</header>
 											</div><!--end .card-head -->
 											<div class="card-body height-8">
-                                               总结：从建立家庭开始，一共添加食物总量：209kg ; 吃掉了 200kg ；剩余了9kg;总的来说，系统运行正常。
+                                               总结：从建立家庭开始，一共添加食物总量：<%=allCount%>kg; 吃掉了<%=eatCount%>kg；剩余了<%=shengCount%>kg;丢弃了<%=diuCount %> kg; 总的来说，系统运行正常。
 											</div><!--end .card-body -->
 										</div><!--end .col -->
 										<div class="col-md-4">
@@ -96,30 +123,25 @@
 												<header>近期状况</header>
 											</div>
 											<div class="card-body height-8">
-												<strong>今天添加食物总量：</strong> 0kg
-												<span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>
+												<strong>今天添加食物总量：</strong> <%=ViewData["nowCount"] %> kg
 												<div class="progress progress-hairline">
-													<div class="progress-bar progress-bar-primary-dark" style="width:43%"></div>
+													<div class="progress-bar progress-bar-primary-dark" style="width:<%=(((double)ViewData["nowCount"])/allCount)*100%>%"></div>
 												</div>
-												近3天添加食物总量：23kg
-												<span class="pull-right text-success text-sm">0,68% <i class="md md-trending-up"></i></span>
+												近3天添加食物总量：<%=ViewData["threeCount"]%> kg
 												<div class="progress progress-hairline">
-													<div class="progress-bar progress-bar-primary-dark" style="width:11%"></div>
+													<div class="progress-bar progress-bar-primary-dark" style="width:<%=(((double)ViewData["threeCount"])/allCount)*100%>%"></div>
 												</div>
-												近一周添加食物总量：123kg
-												<span class="pull-right text-danger text-sm">21,08% <i class="md md-trending-down"></i></span>
+												近一周添加食物总量：<%= ViewData["weekCount"]%> kg
 												<div class="progress progress-hairline">
-													<div class="progress-bar progress-bar-danger" style="width:93%"></div>
+													<div class="progress-bar progress-bar-danger" style="width:<%=(((double)ViewData["weekCount"])/allCount)*100%>%"></div>
 												</div>
-												近一个月添加食物总量：209kg
-												<span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>
+												近一个月添加食物总量：<%= ViewData["monthCount"]%> kg
 												<div class="progress progress-hairline">
-													<div class="progress-bar progress-bar-primary-dark" style="width:63%"></div>
+													<div class="progress-bar progress-bar-primary-dark" style="width:<%=(((double)ViewData["monthCount"])/allCount)*100%>%"></div>
 												</div>
-												近一年添加食物总量：209kg
-												<span class="pull-right text-success text-sm">0,18% <i class="md md-trending-up"></i></span>
+												近一年添加食物总量：<%=ViewData["yearCount"] %> kg
 												<div class="progress progress-hairline">
-													<div class="progress-bar progress-bar-primary-dark" style="width:47%"></div>
+													<div class="progress-bar progress-bar-primary-dark" style="width:<%=(((double)ViewData["yearCount"])/allCount)*100%>%"></div>
 												</div>
 											</div><!--end .card-body -->
 										</div><!--end .col -->

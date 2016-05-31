@@ -409,7 +409,7 @@ namespace FamilyFood.Controllers
         public ActionResult UpdateUserRequest(String nick, String heath, int gendre)
         {
             user_table user= checkUser();
-            user = db.user_table.SingleOrDefault<user_table>(u => user.id == user.id);
+            user = db.user_table.SingleOrDefault<user_table>(u => u.id == user.id);
             if (nick.Length > 0) {
                 user.nick = nick;
             }

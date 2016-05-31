@@ -70,16 +70,11 @@
 					<ul class="header-nav header-nav-options">
 						<li>
 							<!-- Search form -->
-							<form class="navbar-search" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">
-								</div>
-								<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
-							</form>
+							
 						</li>
 						<li class="dropdown hidden-xs">
 							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
-								<i class="fa fa-bell"></i><sup class="badge style-danger">4</sup>
+								<i class="fa fa-bell"></i>
 							</a>
 							<ul class="dropdown-menu animation-expand">
 								<li class="dropdown-header">消息通知</li>
@@ -104,28 +99,28 @@
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">食物总量 <strong>30kg</strong></span>
-											<strong class="pull-right">93%</strong>
+											<span class="text-light">食物总量 <strong>0kg</strong></span>
+											<strong class="pull-right">0%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">今天消耗了 <strong>10kg</strong></span>
-											<strong class="pull-right">30%</strong>
+											<span class="text-light">今天消耗了 <strong>0kg</strong></span>
+											<strong class="pull-right">0%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">昨天消耗了 <strong>5kg</strong></span>
-											<strong class="pull-right">74%</strong>
+											<span class="text-light">昨天消耗了 <strong>0kg</strong></span>
+											<strong class="pull-right">0%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 							</ul><!--end .dropdown-menu -->
@@ -161,7 +156,6 @@
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">家庭食物管理小站欢迎你</li>
 								<li><a href="/user/index">个人中心 <span class="badge style-danger pull-right">16</span></a></li>
-                                <li><a href="/user/familypage">家庭主页</a></li>
                                 <li><a href="/home/about">关于本站</a></li>
 								<li class="divider"></li>
 								<li><a href="/user/Layout"><i class="fa fa-fw fa-power-off text-danger"></i> 安全退出</a></li>
@@ -169,11 +163,7 @@
 						</li><!--end .dropdown -->
 					</ul><!--end .header-nav-profile -->
 					<ul class="header-nav header-nav-toggle">
-						<li>
-							<a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
-								<i class="fa fa-ellipsis-v"></i>
-							</a>
-						</li>
+						
 					</ul><!--end .header-nav-toggle -->
 				</div><!--end #header-navbar-collapse -->
 			</div>
@@ -275,15 +265,11 @@
 					
 
                       <!-- BEGIN PAGES -->
-						<li class="gui-folder">
-							<a>
+						<li>
+							<a href="/home/BuyAdviceByDaPei">
 								<div class="gui-icon"><i class="md md-computer"></i></div>
 								<span class="title">购买建议</span>
 							</a>
-							 <ul>
-								    <li><a href="/home/BuyAdviceByDaPei" ><span class="title">根据食物搭配</span></a></li>
-								    <li><a href="/home/BuyAdviceByHeath" ><span class="title">根据身体健康</span></a></li>
-							 </ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 						<!-- END FORMS -->
 
@@ -298,7 +284,6 @@
                         
                              <ul>
                                     <li><a href="/user/index" ><span class="title">个人中心</span></a></li>
-                                    <li><a href="/user/FamilyPage" ><span class="title">家庭主页</span></a></li>
 								    <li><a href="/user/FamilyMembers" ><span class="title">成员管理</span></a></li>
 								    <li><a href="/user/FamilyIfoUpdate" ><span class="title">家庭信息管理</span></a></li>
 								    <li><a href="/user/FamilyRequestStatus" ><span class="title">家庭申请及状态</span></a></li>
@@ -338,58 +323,7 @@
 			</div><!--end #menubar-->
 			<!-- END MENUBAR -->
 
-			<!-- BEGIN OFFCANVAS RIGHT -->
-			<div class="offcanvas">
-
-				<!-- BEGIN OFFCANVAS SEARCH -->
-				<div id="offcanvas-search" class="offcanvas-pane width-8">
-					<div class="offcanvas-head">
-						<header class="text-primary">建议购买菜品</header>
-						<div class="offcanvas-tools">
-							<a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
-								<i class="md md-close"></i>
-							</a>
-						</div>
-					</div>
-					<div class="offcanvas-body no-padding">
-						
-                        <ul class="list ">
-							<li class="tile divider-full-bleed">
-								<div class="tile-content">
-									<div class="tile-text"><strong>蔬菜</strong></div>
-								</div>
-							</li>
-							<li class="tile">
-								<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
-									<div class="tile-icon">
-										<img src="../../assets/img/avatar4.jpg?1404026791" alt="" />
-									</div>
-									<div class="tile-text">
-										黄瓜
-										<small>0.5kg</small>
-									</div>
-								</a>
-							</li>
-							<li class="tile">
-								<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
-									<div class="tile-icon">
-										<img src="../../assets/img/avatar9.jpg?1404026744" alt="" />
-									</div>
-									<div class="tile-text">
-										西红柿
-										<small>10kg</small>
-									</div>
-								</a>
-							</li>
-							
-                            
-						</ul>
-					</div><!--end .offcanvas-body -->
-				</div><!--end .offcanvas-pane -->
-				<!-- END OFFCANVAS SEARCH -->
-
-			</div><!--end .offcanvas-->
-			<!-- END OFFCANVAS RIGHT -->
+			
 
 		</div><!--end #base-->
 		<!-- END BASE -->
